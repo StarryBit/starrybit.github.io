@@ -1,73 +1,131 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-zinc-950 text-zinc-100 selection:bg-indigo-500/30 selection:text-indigo-200">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop | StarryBit Dev</title>
+    <title>Tools & Templates | StarryBit Dev</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>body { font-family: 'Inter', sans-serif; } .code-font { font-family: 'Geist Mono', monospace; }</style>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .code-font { font-family: 'Geist Mono', monospace; }
+    </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between antialiased">
+<body class="min-h-screen flex flex-col justify-between antialiased bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 transition-colors duration-200">
 
     <!-- Header -->
-    <header class="sticky top-0 z-50 border-b border-zinc-800/60 bg-zinc-950/70 backdrop-blur-md">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="/" class="code-font font-bold text-lg tracking-tight text-white flex items-center gap-2">
-                <span class="text-indigo-400">✦</span> starrybit<span class="text-zinc-500">.dev</span>
+    <header class="sticky top-0 z-50 border-b border-zinc-200/80 bg-white/80 dark:border-zinc-800/60 dark:bg-zinc-950/70 backdrop-blur-md">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/" class="code-font font-bold text-base tracking-tight flex items-center gap-1.5">
+                <span class="text-indigo-600 dark:text-indigo-400">✦</span> starrybit<span class="text-zinc-400 dark:text-zinc-500">.dev</span>
             </a>
-            <nav class="flex items-center gap-6 text-sm font-medium text-zinc-400">
-                <a href="/shop/" class="text-zinc-100 font-semibold">Shop</a>
-                <a href="/blog/" class="hover:text-zinc-100 transition-colors">Insights</a>
-                <a href="https://discord.gg/YOUR_INVITE" target="_blank" class="text-zinc-100 bg-zinc-800 hover:bg-zinc-700 px-3.5 py-1.5 rounded-lg border border-zinc-700/50 transition-all text-xs tracking-wide code-font">Join Discord</a>
+            <nav class="flex items-center gap-5 text-sm font-medium">
+                <a href="/shop/" class="text-zinc-900 dark:text-zinc-100 font-semibold">Shop</a>
+                <a href="/blog/" class="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors">Devlogs</a>
+                
+                <button onclick="toggleTheme()" class="p-1.5 rounded-lg border border-zinc-200 hover:bg-zinc-100 dark:border-zinc-800 dark:hover:bg-zinc-900 text-zinc-500 dark:text-zinc-400 transition-all">
+                    <svg class="hidden dark:block w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 5a7 7 0 100 14 7 7 0 000-14z"/></svg>
+                    <svg class="block dark:hidden w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                </button>
+
+                <a href="https://discord.gg/YOUR_INVITE" target="_blank" class="text-zinc-900 bg-zinc-100 hover:bg-zinc-200 dark:text-zinc-100 dark:bg-zinc-900 dark:hover:bg-zinc-800 px-3.5 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 transition-all text-xs tracking-wide code-font">Join Discord</a>
             </nav>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="max-w-6xl mx-auto px-6 py-16 w-full flex-1">
-        <div class="mb-12 border-b border-zinc-900 pb-8">
-            <h1 class="text-3xl font-bold tracking-tight text-white mb-2">Systems Catalog</h1>
-            <p class="text-zinc-400 text-sm">Drop-in backend frameworks, production tools, and complete game templates.</p>
+    <main class="max-w-5xl mx-auto px-6 py-16 w-full flex-1">
+        <div class="mb-12 border-b border-zinc-200 dark:border-zinc-800/60 pb-8">
+            <h1 class="text-2xl font-bold tracking-tight mb-2">Tools & Templates</h1>
+            <p class="text-zinc-600 dark:text-zinc-400 text-sm max-w-xl leading-relaxed">Drop-in frameworks, modular code utilities, and physical prototyping assets built for production environments.</p>
         </div>
 
         <!-- Product Grid -->
-        <div class="grid md:grid-cols-3 gap-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <!-- Lucky Block Card -->
-            <div class="group border border-zinc-800/80 bg-zinc-900/20 rounded-xl p-5 hover:border-zinc-700 transition-all flex flex-col justify-between">
+            <!-- Item 1: Lucky Block Framework -->
+            <div class="group border border-zinc-200 bg-white dark:border-zinc-800/80 dark:bg-zinc-900/30 rounded-xl p-5 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all flex flex-col justify-between shadow-sm dark:shadow-none">
                 <div>
                     <div class="flex justify-between items-start mb-4">
-                        <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 code-font">Template Kit</span>
-                        <span class="text-sm font-bold text-white code-font">$29</span>
+                        <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 dark:bg-indigo-500/10 dark:text-indigo-400 dark:border-indigo-500/20 code-font">Template Kit</span>
+                        <span class="text-sm font-bold code-font">$29</span>
                     </div>
-                    <h2 class="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Lucky Block Racing Engine</h2>
-                    <p class="text-xs text-zinc-400 leading-relaxed mb-6">Fully optimized, exploit-resistant template handling full multi-player round loops, randomized drops, and server data synchronization.</p>
+                    <h2 class="text-base font-bold mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">Lucky Block Racing Engine</h2>
+                    <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">Fully optimized, exploit-resistant template handling full multiplayer round loops, randomized item drops, and server data synchronization.</p>
+                    <div class="text-[11px] text-emerald-600 dark:text-emerald-400 font-medium mb-4 flex items-center gap-1.5">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Includes setup guide & Discord support
+                    </div>
                 </div>
-                <div class="flex gap-3 pt-4 border-t border-zinc-900">
-                    <a href="/shop/lucky-block-racing/" class="flex-1 text-center bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-200 text-xs py-2.5 rounded-lg transition-colors font-medium">View Specs</a>
-                    <button class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs px-4 py-2.5 rounded-lg font-medium transition-colors">Buy</button>
+                <div class="flex gap-3 pt-4 border-t border-zinc-100 dark:border-zinc-800/60">
+                    <a href="/shop/lucky-block-racing/" class="flex-1 text-center bg-zinc-50 hover:bg-zinc-100 border border-zinc-200 text-zinc-700 dark:bg-zinc-900 dark:hover:bg-zinc-800 dark:border-zinc-800 dark:text-zinc-200 text-xs py-2 rounded-lg transition-colors font-medium">View Specs</a>
+                    <button class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs px-4 py-2 rounded-lg font-medium transition-colors">Buy Now</button>
                 </div>
             </div>
 
-            <!-- Future Product Placeholder -->
-            <div class="border border-zinc-900 bg-zinc-950 rounded-xl p-5 flex flex-col justify-center items-center text-center opacity-60 min-h-[220px]">
-                <span class="text-zinc-700 code-font text-xl mb-2">// 02</span>
-                <p class="text-xs text-zinc-500 code-font">Systems architecture asset indexing next...</p>
+            <!-- Item 2: AI Logic Framework -->
+            <div class="group border border-zinc-200 bg-white dark:border-zinc-800/80 dark:bg-zinc-900/30 rounded-xl p-5 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all flex flex-col justify-between shadow-sm dark:shadow-none">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-zinc-100 text-zinc-600 border border-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:border-zinc-700/50 code-font">Systems Logic</span>
+                        <span class="text-sm font-bold code-font">$19</span>
+                    </div>
+                    <h2 class="text-base font-bold mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">Modular Raycast AI</h2>
+                    <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">Advanced NPC behavior logic utilizing low-overhead line-of-sight raycasting, sensory tracking, and custom environmental search loops.</p>
+                    <div class="text-[11px] text-emerald-600 dark:text-emerald-400 font-medium mb-4 flex items-center gap-1.5">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        API Documentation included
+                    </div>
+                </div>
+                <div class="flex gap-3 pt-4 border-t border-zinc-100 dark:border-zinc-800/60">
+                    <a href="/shop/raycast-ai/" class="flex-1 text-center bg-zinc-50 hover:bg-zinc-100 border border-zinc-200 text-zinc-700 dark:bg-zinc-900 dark:hover:bg-zinc-800 dark:border-zinc-800 dark:text-zinc-200 text-xs py-2 rounded-lg transition-colors font-medium">View Specs</a>
+                    <button class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs px-4 py-2 rounded-lg font-medium transition-colors">Buy Now</button>
+                </div>
+            </div>
+
+            <!-- Item 3: 3D Print File -->
+            <div class="group border border-zinc-200 bg-white dark:border-zinc-800/80 dark:bg-zinc-900/30 rounded-xl p-5 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all flex flex-col justify-between shadow-sm dark:shadow-none">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-zinc-100 text-zinc-600 border border-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:border-zinc-700/50 code-font">3D Model (STL)</span>
+                        <span class="text-sm font-bold code-font">$4</span>
+                    </div>
+                    <h2 class="text-base font-bold mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">Universal Cable Clamp</h2>
+                    <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">Print-in-place modular desk clamp. Fully adjustable threading designed for FDM printers with zero support material required.</p>
+                </div>
+                <div class="flex gap-3 pt-4 border-t border-zinc-100 dark:border-zinc-800/60">
+                    <button class="w-full bg-zinc-900 hover:bg-zinc-800 text-white dark:bg-indigo-600 dark:hover:bg-indigo-500 text-xs py-2.5 rounded-lg font-medium transition-colors">Download STL</button>
+                </div>
             </div>
 
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-zinc-900 bg-zinc-950 py-8 text-center text-xs text-zinc-600 code-font">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <footer class="border-t border-zinc-200 dark:border-zinc-900 bg-white dark:bg-zinc-950 py-8 text-center text-xs text-zinc-500 dark:text-zinc-600 code-font">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>&copy; 2026 StarryBit Dev.</div>
             <div class="flex gap-6">
-                <a href="mailto:contact@starrybitdev.com" class="hover:text-zinc-400">Email</a>
-                <a href="https://discord.gg/YOUR_INVITE" class="hover:text-zinc-400">Discord</a>
+                <a href="mailto:contact@starrybitdev.com" class="hover:text-zinc-800 dark:hover:text-zinc-400 transition-colors">Email</a>
+                <a href="https://discord.gg/YOUR_INVITE" class="hover:text-zinc-800 dark:hover:text-zinc-400 transition-colors">Discord</a>
             </div>
         </div>
     </footer>
