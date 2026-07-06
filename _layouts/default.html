@@ -15,20 +15,15 @@
     <!-- Script -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Theme Logic -->
+    <!-- 3. THEME LOGIC -->
     <script>
-        // Check for saved user preference or system preference
-        function applyTheme() {
-            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
+        // Check local storage or system preference
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
         }
-
-        // Run on load
-        applyTheme();
-
+    
         function toggleTheme() {
             document.documentElement.classList.toggle('dark');
             localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
