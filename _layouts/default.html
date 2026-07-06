@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
+
+    <script>
+        tailwind = {
+            darkMode: 'class',
+        }
+    </script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
         // Light/Dark Mode Logic
         if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -12,6 +20,7 @@
         } else {
             document.documentElement.classList.remove('dark');
         }
+
         function toggleTheme() {
             if (document.documentElement.classList.contains('dark')) {
                 document.documentElement.classList.remove('dark');
@@ -22,6 +31,7 @@
             }
         }
     </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
