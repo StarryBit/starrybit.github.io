@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-zinc-950 text-zinc-100 selection:bg-indigo-500/30 selection:text-indigo-200">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Block Racing Engine | StarryBit Dev</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; } .code-font { font-family: 'Geist Mono', monospace; }</style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased">
 
+    <!-- Header -->
+    <header class="sticky top-0 z-50 border-b border-zinc-800/60 bg-zinc-950/70 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/" class="code-font font-bold text-lg tracking-tight text-white flex items-center gap-2">
+                <span class="text-indigo-400">✦</span> starrybit<span class="text-zinc-500">.dev</span>
+            </a>
+            <nav class="flex items-center gap-6 text-sm font-medium text-zinc-400">
+                <a href="/shop/" class="text-zinc-100">Shop</a>
+                <a href="/blog/" class="hover:text-zinc-100 transition-colors">Insights</a>
+                <a href="https://discord.gg/YOUR_INVITE" target="_blank" class="text-zinc-100 bg-zinc-800 hover:bg-zinc-700 px-3.5 py-1.5 rounded-lg border border-zinc-700/50 transition-all text-xs tracking-wide code-font">Join Discord</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Split Section -->
+    <main class="max-w-6xl mx-auto px-6 py-12 w-full flex-1 grid lg:grid-cols-12 gap-12">
+        
+        <!-- Left Side: Video Showcase & Technical Specs -->
+        <div class="lg:col-span-7 space-y-8">
+            <!-- Video Aspect Ratio Box -->
+            <div class="w-full aspect-video bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl relative">
+                <!-- Replace YOUR_YOUTUBE_ID below with the actual string from your video link -->
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/YOUR_YOUTUBE_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <!-- Deep Architectural Details -->
+            <div>
+                <h2 class="text-xl font-bold text-white mb-4">Engine Infrastructure</h2>
+                <div class="space-y-4 text-sm text-zinc-400 leading-relaxed">
+                    <p>Most public lucky block templates struggle under scale, dragging server heartbeat rates down due to memory leaks and poorly constructed asset cleanup pipelines. This system handles garbage collection multi-threaded across workspace sweeps.</p>
+                    <p>Built completely decoupled: UI scripts read single-source configurations, making custom cosmetic expansion or tool additions completely configuration-driven without breaking server networks.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Conversion Box & Pricing -->
+        <div class="lg:col-span-5">
+            <div class="sticky top-24 border border-zinc-800 bg-zinc-900/20 backdrop-blur-sm p-6 rounded-2xl space-y-6">
+                <div>
+                    <h1 class="text-2xl font-bold text-white mb-1">Lucky Block Racing Engine</h1>
+                    <p class="text-xs text-zinc-500 code-font">Version 1.0.4 &bull; Production Ready</p>
+                </div>
+
+                <div class="text-3xl font-bold text-white code-font">
+                    $29.00 <span class="text-xs text-zinc-500 font-normal">USD</span>
+                </div>
+
+                <!-- Primary Funnel Buttons -->
+                <div class="space-y-3">
+                    <button class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl transition-colors text-sm shadow-lg shadow-indigo-600/10">Buy Framework Template</button>
+                    <!-- Point this to your uncopylocked/test place link -->
+                    <a href="https://www.roblox.com/games/YOUR_GAME_ID" target="_blank" class="block w-full text-center bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-200 font-medium py-3 rounded-xl transition-colors text-sm code-font">⚡ Launch Live Sandbox Demo</a>
+                </div>
+
+                <!-- Feature Verification List -->
+                <div class="border-t border-zinc-900 pt-5 space-y-3 text-xs">
+                    <div class="flex items-start gap-2.5">
+                        <span class="text-indigo-400 mt-0.5">✔</span>
+                        <div>
+                            <strong class="text-zinc-200 block">Server-Authoritative RNG</strong>
+                            <span class="text-zinc-500">Inputs are strictly validated server-side to intercept client modifications.</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-2.5">
+                        <span class="text-indigo-400 mt-0.5">✔</span>
+                        <div>
+                            <strong class="text-zinc-200 block">Modular Config System</strong>
+                            <span class="text-zinc-500">Inject tools, modify weight algorithms, and change workspace drop values in seconds.</span>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-2.5">
+                        <span class="text-indigo-400 mt-0.5">✔</span>
+                        <div>
+                            <strong class="text-zinc-200 block">Lifetime Access & support</strong>
+                            <span class="text-zinc-500">Includes secure Discord validation access for automated codebase updates.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-900 bg-zinc-950 py-8 text-center text-xs text-zinc-600 code-font">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>&copy; 2026 StarryBit Dev.</div>
+            <div class="flex gap-4">
+                <a href="/shop/" class="hover:text-zinc-400">Back to Shop</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
