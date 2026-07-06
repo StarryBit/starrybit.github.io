@@ -3,7 +3,7 @@ title: StarryBit Dev
 description: Welcome to Starry's personal hub. Browse the latest projects, shop exclusive items, and connect with my creative journey today.
 lsi: false
 safe: true
-source: [your repo's top level directory]
+source: starrybit.github.io
 incremental: false
 highlighter: rouge
 gist:
