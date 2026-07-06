@@ -1,58 +1,47 @@
-<!DOCTYPE html>
-<html lang="en" class="bg-zinc-950 text-zinc-100 selection:bg-indigo-500/30 selection:text-indigo-200">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insights & Architecture | StarryBit Dev</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>body { font-family: 'Inter', sans-serif; } .code-font { font-family: 'Geist Mono', monospace; }</style>
-</head>
-<body class="min-h-screen flex flex-col justify-between antialiased">
+---
+layout: default
+title: Insights & Architecture | StarryBit Dev
+---
 
-    <!-- Header -->
-    <header class="sticky top-0 z-50 border-b border-zinc-800/60 bg-zinc-950/70 backdrop-blur-md">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="/" class="code-font font-bold text-lg tracking-tight text-white flex items-center gap-2">
-                <span class="text-indigo-400">✦</span> starrybit<span class="text-zinc-500">.dev</span>
-            </a>
-            <nav class="flex items-center gap-6 text-sm font-medium text-zinc-400">
-                <a href="/shop/" class="hover:text-zinc-100 transition-colors">Shop</a>
-                <a href="/blog/" class="text-zinc-100 font-semibold">Insights</a>
-                <a href="https://discord.gg/YOUR_INVITE" target="_blank" class="text-zinc-100 bg-zinc-800 hover:bg-zinc-700 px-3.5 py-1.5 rounded-lg border border-zinc-700/50 transition-all text-xs tracking-wide code-font">Join Discord</a>
-            </nav>
+<!-- Page Header -->
+<div class="mb-12 border-b border-zinc-200 dark:border-zinc-800/60 pb-8">
+    <h1 class="text-3xl font-bold tracking-tight mb-3">Technical Insights</h1>
+    <p class="text-zinc-600 dark:text-zinc-400 text-base max-w-xl leading-relaxed">
+        Case studies regarding engine optimization, state validation, and system loops. Deep dives into the architecture behind my projects.
+    </p>
+</div>
+
+<!-- Devlog Grid -->
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Card 1: ECHOPULSE -->
+    <article class="group border border-zinc-200 bg-white dark:border-zinc-800/80 dark:bg-zinc-900/30 rounded-xl p-5 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all flex flex-col justify-between shadow-sm dark:shadow-none">
+        <div>
+            <div class="text-[10px] uppercase font-bold tracking-wider text-indigo-600 dark:text-indigo-400 mb-3 code-font">July 2026 • Optimization</div>
+            <h2 class="text-base font-bold mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">Zero-Leak World Flush Loops</h2>
+            <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">An exploration of how garbage collection structures handle workspace cleanup across multi-instance event updates without choking performance.</p>
         </div>
-    </header>
+        <a href="#" class="pt-4 border-t border-zinc-100 dark:border-zinc-800/60 text-xs font-semibold text-zinc-900 dark:text-zinc-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors code-font">Read Analysis &rarr;</a>
+    </article>
 
-    <!-- Main Content -->
-    <main class="max-w-3xl mx-auto px-6 py-16 w-full flex-1">
-        <div class="mb-12 border-b border-zinc-900 pb-8">
-            <h1 class="text-3xl font-bold tracking-tight text-white mb-2">Technical Insights</h1>
-            <p class="text-zinc-400 text-sm">Case studies regarding engine optimization, state validation, and system loops.</p>
+    <!-- Card 2: Modular Hardware -->
+    <article class="group border border-zinc-200 bg-white dark:border-zinc-800/80 dark:bg-zinc-900/30 rounded-xl p-5 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all flex flex-col justify-between shadow-sm dark:shadow-none">
+        <div>
+            <div class="text-[10px] uppercase font-bold tracking-wider text-emerald-600 dark:text-emerald-400 mb-3 code-font">June 2026 • CAD/CAM</div>
+            <h2 class="text-base font-bold mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">Prototyping Modular Clamps</h2>
+            <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">Designing print-in-place mechanics for the universal cable holder, focusing on tolerance testing and thread durability.</p>
         </div>
+        <a href="#" class="pt-4 border-t border-zinc-100 dark:border-zinc-800/60 text-xs font-semibold text-zinc-900 dark:text-zinc-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors code-font">Read Analysis &rarr;</a>
+    </article>
 
-        <!-- Article List -->
-        <div class="space-y-10">
-            
-            <!-- Article Item 1 -->
-            <article class="group">
-                <div class="text-xs text-zinc-500 code-font mb-2">JULY 2026 &bull; OPTIMIZATION</div>
-                <h2 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors mb-3">Architecting Zero-Leak World Flush Loops in Multiplayer Sessions</h2>
-                <p class="text-sm text-zinc-400 leading-relaxed mb-4">An depth exploration of how garbage collection structures handle workspace cleanup across multi-instance event updates without choking central performance layers...</p>
-                <span class="text-xs font-semibold text-zinc-300 group-hover:text-indigo-300 transition-colors code-font">Read Analysis &rarr;</span>
-            </article>
-
+    <!-- Card 3: YouTube Strategy -->
+    <article class="group border border-zinc-200 bg-white dark:border-zinc-800/80 dark:bg-zinc-900/30 rounded-xl p-5 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all flex flex-col justify-between shadow-sm dark:shadow-none">
+        <div>
+            <div class="text-[10px] uppercase font-bold tracking-wider text-amber-600 dark:text-amber-400 mb-3 code-font">May 2026 • Strategy</div>
+            <h2 class="text-base font-bold mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">Retrospective Growth</h2>
+            <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">Analyzing CTR data from the 2016-to-2026 evolution video and why "retrospective" content drives higher engagement than standard devlogs.</p>
         </div>
-    </main>
+        <a href="#" class="pt-4 border-t border-zinc-100 dark:border-zinc-800/60 text-xs font-semibold text-zinc-900 dark:text-zinc-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors code-font">Read Analysis &rarr;</a>
+    </article>
 
-    <!-- Footer -->
-    <footer class="border-t border-zinc-900 bg-zinc-950 py-8 text-center text-xs text-zinc-600 code-font">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div>&copy; 2026 StarryBit Dev.</div>
-        </div>
-    </footer>
-
-</body>
-</html>
+</div>
