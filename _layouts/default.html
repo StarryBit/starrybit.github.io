@@ -6,6 +6,11 @@
     <title>{{ page.title }}</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
+    <script>
         // Light/Dark Mode Logic
         if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
