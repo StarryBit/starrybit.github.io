@@ -69,28 +69,24 @@ layout: default
     {% endif %}
 
 </nav>
-
+<style>
     .image-gallery {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 1rem;
-    
         margin: 2rem 0;
     }
     
     .image-gallery img {
         width: 100%;
         display: block;
-    
         border-radius: 1rem;
-    
         border: 1px solid rgb(228 228 231);
-    
         transition: transform .2s ease;
     }
     
     .image-gallery img:hover {
         transform: translateY(-2px);
     }
-
+</style>
 </article>
