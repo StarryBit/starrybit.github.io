@@ -8,11 +8,12 @@
         class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
     >
 
-    <div class="absolute inset-0 bg-white/40 dark:bg-black/50"></div>
+    <!-- subtle readability gradient -->
+    <div class="absolute inset-0 bg-gradient-to-t from-white/80 via-white/20 to-transparent dark:from-zinc-950/80 dark:via-zinc-950/20"></div>
 
     <div class="relative z-10 h-full flex items-end p-6">
 
-        <div class="w-full bg-white/20 dark:bg-zinc-950/80 backdrop-blur-md rounded-xl p-5 border border-zinc-200/50 dark:border-zinc-800/50">
+        <div class="w-full bg-white/70 dark:bg-zinc-950/70 backdrop-blur-md rounded-xl p-5 border border-zinc-200/50 dark:border-zinc-800/50">
 
             {% if include.category %}
             <div class="text-indigo-600 dark:text-indigo-400 text-sm font-bold mb-3 code-font">
