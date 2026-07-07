@@ -68,7 +68,7 @@
         
             {% if include.date %}
             <div class="text-xs text-zinc-500 code-font">
-                {{ include.date }}
+                {{ include.date | date: "%b %d, %Y" }}
             </div>
             {% endif %}
     
