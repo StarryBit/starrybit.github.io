@@ -4,10 +4,9 @@ layout: default
 
 <article>
 
-
 <header class="mb-12 border-b border-zinc-200 dark:border-zinc-800/60 pb-8">
 
-    <div class="flex items-center gap-2 mb-4">
+    <div class="flex items-center gap-3 mb-4">
 
         <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 dark:bg-indigo-500/10 dark:text-indigo-400 dark:border-indigo-500/20 code-font">
             Devlog
@@ -20,24 +19,56 @@ layout: default
     </div>
 
 
-    <h1 class="text-3xl font-bold tracking-tight mb-3">
-
+    <h1 class="text-3xl font-bold tracking-tight">
         {{ page.title }}
-
     </h1>
-
 
 </header>
 
 
-
-<section class="text-zinc-700 dark:text-zinc-300 leading-relaxed space-y-6">
-
-
-{{ content }}
-
-
+<section>
+    {{ content }}
 </section>
+
+
+<!-- Devlog Navigation -->
+<nav class="mt-16 pt-8 border-t border-zinc-200 dark:border-zinc-800/60 flex justify-between gap-6">
+
+    {% if page.previous %}
+    <a href="{{ page.previous.url | relative_url }}"
+       class="group max-w-[45%]">
+
+        <p class="text-xs text-zinc-500 code-font mb-1">
+            ← Previous Devlog
+        </p>
+
+        <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+            {{ page.previous.title }}
+        </p>
+
+    </a>
+    {% else %}
+    <div></div>
+    {% endif %}
+
+
+
+    {% if page.next %}
+    <a href="{{ page.next.url | relative_url }}"
+       class="group max-w-[45%] text-right">
+
+        <p class="text-xs text-zinc-500 code-font mb-1">
+            Next Devlog →
+        </p>
+
+        <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+            {{ page.next.title }}
+        </p>
+
+    </a>
+    {% endif %}
+
+</nav>
 
 
 </article>
