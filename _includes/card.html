@@ -58,11 +58,21 @@
 
     <div class="p-6">
 
-        {% if include.category %}
-        <div class="text-indigo-600 dark:text-indigo-400 text-sm font-bold mb-3 code-font">
-            {{ include.category }}
+        <div class="flex justify-between items-center mb-4">
+
+            {% if include.category %}
+            <div class="text-indigo-600 dark:text-indigo-400 text-sm font-bold code-font">
+                {{ include.category }}
+            </div>
+            {% endif %}
+        
+            {% if include.date %}
+            <div class="text-xs text-zinc-500 code-font">
+                {{ include.date }}
+            </div>
+            {% endif %}
+    
         </div>
-        {% endif %}
 
         <h3 class="text-lg font-bold mb-2">
             {{ include.title }}
