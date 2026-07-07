@@ -3,37 +3,85 @@ layout: default
 title: Devlogs | StarryBit
 ---
 
-<h1 class="text-4xl font-bold mb-10">
-    Devlogs
-</h1>
+<section>
+
+    <!-- Page Header -->
+    <div class="mb-12 border-b border-zinc-200 dark:border-zinc-800/60 pb-8">
+
+        <h1 class="text-3xl font-bold tracking-tight mb-3">
+            Devlogs
+        </h1>
+
+        <p class="text-zinc-600 dark:text-zinc-400 text-base max-w-xl leading-relaxed">
+            Development updates, technical breakdowns, and behind-the-scenes progress on StarryBit projects.
+        </p>
+
+    </div>
 
 
-<div class="space-y-8">
+    <!-- Devlog Cards -->
+    <section class="grid md:grid-cols-2 gap-6">
 
-{% for post in site.posts %}
+        {% for post in site.posts %}
 
-<article>
-
-    <a href="{{ post.url }}"
-       class="text-xl font-semibold hover:text-indigo-500">
-
-        {{ post.title }}
-
-    </a>
+        <article class="group border border-zinc-200 bg-white dark:border-zinc-800/80 dark:bg-zinc-900/30 rounded-xl p-5 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all shadow-sm dark:shadow-none flex flex-col justify-between">
 
 
-    <p class="text-sm text-zinc-500 code-font mt-2">
-        {{ post.date | date: "%B %d, %Y" }}
-    </p>
+            <div>
+
+                <!-- Metadata -->
+                <div class="flex justify-between items-center mb-4">
+
+                    <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 dark:bg-indigo-500/10 dark:text-indigo-400 dark:border-indigo-500/20 code-font">
+                        Devlog
+                    </span>
 
 
-    <p class="mt-3 text-zinc-600 dark:text-zinc-400">
-        {{ post.excerpt }}
-    </p>
+                    <span class="text-xs text-zinc-500 code-font">
+                        {{ post.date | date: "%b %d, %Y" }}
+                    </span>
+
+                </div>
 
 
-</article>
+                <!-- Title -->
+                <h2 class="text-base font-bold mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
 
-{% endfor %}
+                    {{ post.title }}
 
-</div>
+                </h2>
+
+
+                <!-- Description -->
+                <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed mb-5">
+
+                    {{ post.excerpt | strip_html }}
+
+                </p>
+
+
+            </div>
+
+
+            <!-- Footer -->
+            <div class="pt-4 border-t border-zinc-100 dark:border-zinc-800/60">
+
+                <a href="{{ post.url | relative_url }}"
+                   class="text-xs font-medium text-zinc-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+
+                    Read Devlog →
+
+                </a>
+
+            </div>
+
+
+        </article>
+
+
+        {% endfor %}
+
+
+    </section>
+
+</section>
