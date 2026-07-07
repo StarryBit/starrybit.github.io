@@ -30,7 +30,7 @@ excerpt: "Remaking the visual raycasting system in ECHOPULSE"
         </p>
         <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
             I accomplished this primarily through object pooling since creating and destroying thousands of objects in Roblox is a memory drain, and I paired this with a memory reclamation process when the pool maxes out to reuse the oldest memory orbs first (often called Swap-and-Pop). I also had to be aware of how often the thread needs to bridge between Luau and the C++ engine, which I reduced by utilizing the BulkMoveTo function instead of modifying the CFrame of thousands of individual parts. I now use a fair bit of spatial hashing to avoid parts stacking on top of each other , and I found noticeable gains in performance when I reduced math operations such as math.sqrt inside large loops (which are computationally expensive) and replaced them with squared values instead (B ² + C ² = D ² ), and pre-baked my math.random functions in a table to cycle through for orb jitter instead of performing math.random inside the loops for every orb. I also split up my threads based on priority to ensure certain background tasks, such as color and transparency changes, ran at 20Hz instead of the regular 60-120Hz for critical tasks like CFrame tracking and vector positioning.
-        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+        </p>
         <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
             This was extremely hard to create since running this many orbs and property changes constantly is very demanding on performance, and every small detail matters because it is used at a large scale, but the results were absolutely beautiful:
         </p>
