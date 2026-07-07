@@ -1,37 +1,43 @@
-<div class="group rounded-2xl bg-white border border-zinc-200 shadow-sm overflow-hidden dark:bg-zinc-900/30 dark:border-zinc-800/80 transition-all hover:-translate-y-1 hover:shadow-lg">
+<div class="group relative overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm min-h-[320px]">
 
     {% if include.image %}
-    <div class="aspect-video overflow-hidden">
-        <img 
-            src="{{ include.image | relative_url }}"
-            alt="{{ include.title }}"
-            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-        >
-    </div>
+    <img
+        src="{{ include.image | relative_url }}"
+        alt="{{ include.title }}"
+        class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+    >
     {% endif %}
 
-    <div class="p-6">
+    <!-- image darkening layer -->
+    <div class="absolute inset-0 bg-white/40 dark:bg-black/40"></div>
 
-        {% if include.category %}
-        <div class="text-indigo-600 dark:text-indigo-400 text-sm font-bold mb-3 code-font">
-            {{ include.category }}
+    <!-- content panel -->
+    <div class="relative z-10 h-full flex flex-col justify-end p-6">
+
+        <div class="bg-white/80 dark:bg-zinc-950/75 backdrop-blur-md rounded-xl p-5 border border-zinc-200/50 dark:border-zinc-800/50">
+
+            {% if include.category %}
+            <div class="text-indigo-600 dark:text-indigo-400 text-sm font-bold mb-3 code-font">
+                {{ include.category }}
+            </div>
+            {% endif %}
+
+            <h3 class="text-lg font-bold mb-2">
+                {{ include.title }}
+            </h3>
+
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
+                {{ include.description }}
+            </p>
+
+            {% if include.link %}
+            <a href="{{ include.link }}"
+               class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
+                Learn More →
+            </a>
+            {% endif %}
+
         </div>
-        {% endif %}
-
-        <h3 class="text-lg font-bold mb-2">
-            {{ include.title }}
-        </h3>
-
-        <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
-            {{ include.description }}
-        </p>
-
-        {% if include.link %}
-        <a href="{{ include.link }}"
-           class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
-            Learn More →
-        </a>
-        {% endif %}
 
     </div>
 
