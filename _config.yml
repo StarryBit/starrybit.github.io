@@ -13,3 +13,4 @@ kramdown:
   syntax_highlighter: rouge
 plugins:
   - jekyll-sitemap
+  - jekyll-feed
