@@ -1,0 +1,38 @@
+<div class="group rounded-2xl bg-white border border-zinc-200 shadow-sm overflow-hidden dark:bg-zinc-900/30 dark:border-zinc-800/80 transition-all hover:-translate-y-1 hover:shadow-lg">
+
+    {% if include.image %}
+    <div class="aspect-video overflow-hidden">
+        <img 
+            src="{{ include.image | relative_url }}"
+            alt="{{ include.title }}"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        >
+    </div>
+    {% endif %}
+
+    <div class="p-6">
+
+        {% if include.category %}
+        <div class="text-indigo-600 dark:text-indigo-400 text-sm font-bold mb-3 code-font">
+            {{ include.category }}
+        </div>
+        {% endif %}
+
+        <h3 class="text-lg font-bold mb-2">
+            {{ include.title }}
+        </h3>
+
+        <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
+            {{ include.description }}
+        </p>
+
+        {% if include.link %}
+        <a href="{{ include.link }}"
+           class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
+            Learn More →
+        </a>
+        {% endif %}
+
+    </div>
+
+</div>
