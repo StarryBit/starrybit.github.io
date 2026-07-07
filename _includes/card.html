@@ -1,42 +1,48 @@
 {% if include.style == "showcase" %}
 
-<div class="group relative overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm min-h-[360px] flex flex-col justify-end">
+<div class="group relative overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm min-h-[360px]">
 
-    <!-- 1. Background Image (Slightly brightened in dark mode via contrast/brightness if needed) -->
+    <!-- Full card image -->
     <img
         src="{{ include.image | relative_url }}"
         alt="{{ include.title }}"
         class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
     >
 
-    <!-- 2. Full-Card Seamless Blur & Readability Tint -->
-    <!-- This replaces the divider line and blends across the entire image -->
-    <div class="absolute inset-0 bg-white/20 dark:bg-zinc-950/40 backdrop-blur-md transition-colors duration-300 group-hover:bg-white/20 dark:group-hover:bg-zinc-950/30"></div>
+    <!-- Bottom readability fade only -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
 
-    <!-- 3. Text Content (Floating perfectly readable over the blurred sheet) -->
-    <div class="relative z-10 w-full p-6">
 
-        {% if include.category %}
-        <div class="text-indigo-600 dark:text-indigo-400 text-sm font-bold mb-3 code-font">
-            {{ include.category }}
+    <!-- Glass text panel -->
+    <div class="relative z-10 h-full flex items-end">
+
+        <div class="w-full p-6 bg-white/70 dark:bg-zinc-950/70 backdrop-blur-md border-t border-white/20 dark:border-zinc-800/50">
+
+            {% if include.category %}
+            <div class="text-indigo-600 dark:text-indigo-400 text-sm font-bold mb-3 code-font">
+                {{ include.category }}
+            </div>
+            {% endif %}
+
+
+            <h3 class="text-lg font-bold mb-2">
+                {{ include.title }}
+            </h3>
+
+
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
+                {{ include.description }}
+            </p>
+
+
+            {% if include.link %}
+            <a href="{{ include.link }}"
+               class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
+                Learn More →
+            </a>
+            {% endif %}
+
         </div>
-        {% endif %}
-
-        <!-- Using explicit text balancing/colors to pop off dark images -->
-        <h3 class="text-lg font-bold mb-2 text-zinc-900 dark:text-white">
-            {{ include.title }}
-        </h3>
-
-        <p class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed mb-4">
-            {{ include.description }}
-        </p>
-
-        {% if include.link %}
-        <a href="{{ include.link }}"
-           class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:underline inline-flex items-center">
-            Learn More →
-        </a>
-        {% endif %}
 
     </div>
 
