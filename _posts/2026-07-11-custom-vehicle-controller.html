@@ -27,7 +27,7 @@ image: "/assets/Screenshot 2026-07-11 181308.png"
             Initially, after the full physics model delivered inconsistent results and I inevitably scrapped it, I tried a hybrid model with constraints and scripted steering. The most difficult part of the full physics model was that the steering would constantly over-correct itself. If I applied thrust on one wheel and opposite on another and set limits, it would blast past these limits regardless of how fast or slow it was going, oscillating back and forth. I tried to limit this with a dead zone, but interestingly it was breaching this zone by a substantial margin within a single frame (faster than you could even see), so I tried to compensate for this by scripting the steering with angular velocities while keeping the springs for easier suspension. However, the springs are just as tricky to work with, since without proper tuning, they can very quickly give a sad image of a car that once had its wheels below the vehicle, now positioned half on top and glitched inside:
         </p>
         <div class="image-gallery">
-            <img src="/assets/Screenshot 2026-07-05 172238.png" alt="">
+            <img src="/assets/Screenshot 2026-06-28 135028.png" alt="">
         </div>
         <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
             After struggling with the springs for a bit too long, I also did away with them and decided to build my own system.
@@ -45,7 +45,7 @@ image: "/assets/Screenshot 2026-07-11 181308.png"
             My new issue was that going up a slope had no effect on the car's orientation due to it being overridden by the align orientation. This resulted in the car looking like it was floating in the air, so I had to get a little creative:
         </p>
         <div class="image-gallery">
-            <img src="/assets/Screenshot 2026-06-28 135028.png" alt="">
+            <img src="/assets/Screenshot 2026-07-05 172238.png" alt="">
         </div>
         <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
             I implemented a four-point raycast system that computes the dot and cross products to project a vector onto the slope of the ground and determine the real orientation:
