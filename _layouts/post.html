@@ -70,26 +70,192 @@ layout: default
 
 </nav>
 <style>
-    .image-gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 1rem;
-        margin: 2rem 0;
+
+.image-gallery {
+    position: relative;
+    max-width: 850px;
+    margin: 2.5rem auto;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid rgb(228 228 231);
+    background: rgb(24 24 27);
+}
+
+.image-gallery img {
+    display: none;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: rgb(24 24 27);
+}
+
+.image-gallery img.active {
+    display: block;
+}
+
+
+/* Navigation buttons */
+
+.image-gallery::before,
+.image-gallery::after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0,0,0,.55);
+    color: white;
+
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 5;
+
+    transition: .2s;
+}
+
+
+.image-gallery::before {
+    content: "‹";
+    left: 14px;
+}
+
+
+.image-gallery::after {
+    content: "›";
+    right: 14px;
+}
+
+
+.image-gallery:hover::before,
+.image-gallery:hover::after {
+    background: rgba(0,0,0,.8);
+}
+
+
+/* Hide arrows when only one image */
+
+.image-gallery.single::before,
+.image-gallery.single::after {
+    display:none;
+}
+<script>
+
+document.querySelectorAll(".image-gallery").forEach(gallery => {
+
+    const images = gallery.querySelectorAll("img");
+
+    if (images.length === 0) return;
+
+
+    let index = 0;
+
+
+    function showImage(i) {
+
+        images.forEach(img => {
+            img.classList.remove("active");
+        });
+
+        images[i].classList.add("active");
+
     }
-    
-    .image-gallery img {
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
-        object-position: center;
-        display: block;
-        border-radius: 1rem;
-        border: 1px solid rgb(228 228 231);
-        transition: transform .2s ease;
+
+
+    showImage(0);
+
+
+    if (images.length === 1) {
+
+        gallery.classList.add("single");
+        return;
+
     }
-    
-    .image-gallery img:hover {
-        transform: translateY(-2px);
-    }
+
+
+    gallery.addEventListener("click", event => {
+
+
+        const rect = gallery.getBoundingClientRect();
+
+        const clickX = event.clientX - rect.left;
+
+
+        if (clickX < rect.width / 2) {
+
+            index--;
+
+            if (index < 0)
+                index = images.length - 1;
+
+        } 
+        
+        else {
+
+            index++;
+
+            if (index >= images.length)
+                index = 0;
+
+        }
+
+
+        showImage(index);
+
+    });
+
+
+
+    // swipe support for mobile
+
+    let startX = 0;
+
+
+    gallery.addEventListener("touchstart", e => {
+
+        startX = e.touches[0].clientX;
+
+    });
+
+
+    gallery.addEventListener("touchend", e => {
+
+        let endX = e.changedTouches[0].clientX;
+
+        if (startX - endX > 50) {
+
+            index++;
+
+            if(index >= images.length)
+                index = 0;
+
+            showImage(index);
+
+        }
+
+
+        if (endX - startX > 50) {
+
+            index--;
+
+            if(index < 0)
+                index = images.length - 1;
+
+            showImage(index);
+
+        }
+
+    });
+
+
+});
+
+</script>
+
 </style>
 </article>
