@@ -144,6 +144,38 @@ layout: default
 .image-gallery.single::after {
     display:none;
 }
+
+/* Responsive Video Embeds */
+.video-wrapper {
+    position: relative;
+    max-width: 850px;
+    margin: 2.5rem auto;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid rgb(228 228 231);
+    background: rgb(24 24 27);
+    /* For dark mode borders if you are using standard Tailwind-like classes */
+}
+
+/* Fix for dark mode borders matching your header */
+@media (prefers-color-scheme: dark) {
+    .video-wrapper {
+        border-color: rgba(39, 39, 42, 0.6);
+    }
+}
+
+.video-wrapper iframe,
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 18px;
+}
 </style>
     <script>
 
