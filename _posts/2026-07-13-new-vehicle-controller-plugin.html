@@ -14,7 +14,7 @@ image: "/assets/Screenshot 2026-07-11 181308.png"
         </h1>
 
         <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-          I will update this page later. Just put video place holder for now
+          I expanded on my controller from the previous devlog by creating a new plugin for it. This is part of my bigger mission to make an easy-to-use, plug-and-play vehicle system on Roblox, and by creating this, it is now very easy to set up any vehicle with my system, regardless of shape, size, weight, etc.
         </p>
     </div>
 
@@ -24,7 +24,7 @@ image: "/assets/Screenshot 2026-07-11 181308.png"
             Background
         </h1>
         <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            Initially, after the full physics model delivered inconsistent results and I inevitably scrapped it, I tried a hybrid model with constraints and scripted steering. The most difficult part of the full physics model was that the steering would constantly over-correct itself. If I applied thrust on one wheel and opposite on another and set limits, it would blast past these limits regardless of how fast or slow it was going, oscillating back and forth. I tried to limit this with a dead zone, but interestingly it was breaching this zone by a substantial margin within a single frame (faster than you could even see), so I tried to compensate for this by scripting the steering with angular velocities while keeping the springs for easier suspension. However, the springs are just as tricky to work with, since without proper tuning, they can very quickly give a sad image of a car that once had its wheels below the vehicle, now positioned half on top and glitched inside:
+            I have been working towards this level of simplicity since the beginning of this project by exposing as many variables as I could as attributes. I am still tuning this, of course, to give more control, but it already supports presets such as car, truck, and kart with varying settings like max speed, turn speed, drift strength, acceleration, etc. Originally, I was working on a racing template, but the vehicle system was already getting pretty involved, and I wanted it to be easier to use and configure instead of having one script designed for one type of system. I switched gears a bit to focus more on the vehicle system and decided to transform it into one big vehicle system that can support various configurations and setups and seamlessly convert them into one capable of my system.
         </p>
         <div class="image-gallery">
             <img src="/assets/Screenshot 2026-06-28 135028.png" alt="">
@@ -40,37 +40,37 @@ image: "/assets/Screenshot 2026-07-11 181308.png"
             After struggling with the springs for a bit too long, I also did away with them and decided to build my own system.
         </p>
         <h1 class="text-xl font-bold mb-2">
-            The Core System
+            Technical Breakdown
         </h1>
         <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            I tried angular velocity for a while, but my goal was a simple two-wheel-drive setup where the driving force simply follows the current trajectory of the vehicle. As per Newton's First Law of Motion, we can break each force into its respective x and y components. Angular velocity does not affect the linear velocity pushing the car forward, so even a strong angle will largely result in the vehicle flipping because the car's current motion is still going forward (nothing is stopping it from doing so; just because it rotates doesn't mean it still doesn't have kinetic energy). I overcame this by swapping the angular velocity for aligned orientation and keeping the velocity bound by the root part's look vector. With that in place, I had a basic controller that glides on the ground and moves in the forward direction of the vehicle.
+            It's set up with a pretty straightforward interface to select the model of a vehicle, its primary part (more on that because it's the single most important part), its seat, and a few other visual components such as wheels and exhaust. Everything aside from the primary part and the seat is basically visual and has no impact on its functionality. I still have yet to add the visual features (such as wheels turning and exhaust fumes), but they're there for now as placeholders.
         </p>
         <h1 class="text-xl font-bold mb-2">
-            The Slope Issue
+            The Primary Part
         </h1>
         <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            My new issue was that going up a slope had no effect on the car's orientation due to it being overridden by the align orientation. This resulted in the car looking like it was floating in the air, so I had to get a little creative:
+            I'm going to talk a bit about how the raycast system is set up because it's important for the primary part. There are other options for handling wheel positions, but I decided it wasn't worth it since it introduces more complex physics to balance and informing people about proper wheel placements that might not be as intuitive as simply having them in all four corners. I will likely revisit this choice later, but for now, it's set up so that each corner of the primary part, which can be any regular base part in contact with the ground, gets a raycast directed at the ground:
         </p>
         <div class="image-gallery">
             <img src="/assets/Screenshot 2026-07-05 172238.png" alt="">
         </div>
         <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            I implemented a four-point raycast system that computes the dot and cross products to project a vector onto the slope of the ground and determine the real orientation:
+            Because suspension and overall movement are calculated based on these points, the wheels need to be directly at each corner of the primary part for the visual wheel placement to align with the actual movement. All of the physics (such as suspension, grip, and drag) are based on the primary part, so that's why it needs to be touching the ground (just keep it invisible, and it has no impact on the overall look of the vehicle).
         </p>
         <div class="image-gallery">
             <img src="/assets/Screenshot 2026-07-11 181308.png" alt="">
         </div>
         <h1 class="text-xl font-bold mb-2">
-            Drifting
+            Suspension, Drag, and Grip
         </h1>
         <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            I also wanted a working drift system for testing, so I expanded on my orientation logic to factor in a drift strength, which would widen the turn radius while holding down the drift key, and added a lift to the side of the vehicle during a turn that lifts the side of the vehicle more during a drift (as if you're actually banking the turn). It's just a fun little visual.
+            I also added suspension, drag, and grip to balance this out. This has given the vehicle a much more reliable and realistic feel. I had some issues before when adding the suspension because it had no counterbalance, so the kart would infinitely accelerate, which reminded me that I dropped all physical properties in the system and friction didn't exist, so I added some artificial friction and grip for better steering control.
         </p>
         <h1 class="text-xl font-bold mb-2">
             Up Next
         </h1>
         <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            With a working controller, I just need to expand on my raycast system to add suspension and rig up the rest of the kart's visuals, such as fake wheels and an exhaust.
+            I'll be expanding on the attributes and the system to give more control and add in the visual features (like the wheels and steering wheel). But so far, I'm super excited about where this is going! It will be effortless to make a reliable and entertaining vehicle in Roblox with this system and the options to create various kinds of vehicles.
         </p>
     </div>
 </section>
