@@ -27,7 +27,7 @@ image: "/assets/Screenshot 2026-07-11 181308.png"
             I have been working towards this level of simplicity since the beginning of this project by exposing as many variables as I could as attributes. I am still tuning this, of course, to give more control, but it already supports presets such as car, truck, and kart with varying settings like max speed, turn speed, drift strength, acceleration, etc. Originally, I was working on a racing template, but the vehicle system was already getting pretty involved, and I wanted it to be easier to use and configure instead of having one script designed for one type of system. I switched gears a bit to focus more on the vehicle system and decided to transform it into one big vehicle system that can support various configurations and setups and seamlessly convert them into one capable of my system.
         </p>
         <div class="image-gallery">
-            <img src="/assets/Screenshot 2026-06-28 135028.png" alt="">
+            <img src="/assets/Screenshot 2026-07-13 171010.png" alt="New vehicle configuration plugin panel open on the right">
         </div>
         <div class="video-wrapper">
           <iframe 
@@ -36,9 +36,6 @@ image: "/assets/Screenshot 2026-07-11 181308.png"
               allowfullscreen>
           </iframe>
         </div>
-        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            After struggling with the springs for a bit too long, I also did away with them and decided to build my own system.
-        </p>
         <h1 class="text-xl font-bold mb-2">
             Technical Breakdown
         </h1>
@@ -52,14 +49,11 @@ image: "/assets/Screenshot 2026-07-11 181308.png"
             I'm going to talk a bit about how the raycast system is set up because it's important for the primary part. There are other options for handling wheel positions, but I decided it wasn't worth it since it introduces more complex physics to balance and informing people about proper wheel placements that might not be as intuitive as simply having them in all four corners. I will likely revisit this choice later, but for now, it's set up so that each corner of the primary part, which can be any regular base part in contact with the ground, gets a raycast directed at the ground:
         </p>
         <div class="image-gallery">
-            <img src="/assets/Screenshot 2026-07-05 172238.png" alt="">
+            <img src="/assets/Screenshot 2026-07-14 223737.png" alt="My Roblox character driving a part with green neon rods at each corner to visualize raycast validation">
         </div>
         <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
             Because suspension and overall movement are calculated based on these points, the wheels need to be directly at each corner of the primary part for the visual wheel placement to align with the actual movement. All of the physics (such as suspension, grip, and drag) are based on the primary part, so that's why it needs to be touching the ground (just keep it invisible, and it has no impact on the overall look of the vehicle).
         </p>
-        <div class="image-gallery">
-            <img src="/assets/Screenshot 2026-07-11 181308.png" alt="">
-        </div>
         <h1 class="text-xl font-bold mb-2">
             Suspension, Drag, and Grip
         </h1>
