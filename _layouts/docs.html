@@ -1,0 +1,96 @@
+---
+layout: default
+---
+
+<div class="grid lg:grid-cols-[260px_1fr] gap-12">
+
+    <!-- Sidebar -->
+    <aside class="hidden lg:block">
+
+        <div class="sticky top-24">
+
+            <div class="border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5">
+
+                <h2 class="font-bold text-lg">
+                    {{ page.product }}
+                </h2>
+
+                <p class="text-sm text-zinc-500 mt-1 mb-5">
+                    Documentation
+                </p>
+
+                <nav class="space-y-1 text-sm">
+
+                    <a href="./"
+                       class="block px-3 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                        Overview
+                    </a>
+
+                    <a href="./quick-start"
+                       class="block px-3 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                        Quick Start
+                    </a>
+
+                    <a href="./installation"
+                       class="block px-3 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                        Installation
+                    </a>
+
+                    <a href="./configuration"
+                       class="block px-3 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                        Configuration
+                    </a>
+
+                    <a href="./api"
+                       class="block px-3 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                        API
+                    </a>
+
+                    <a href="./troubleshooting"
+                       class="block px-3 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                        Troubleshooting
+                    </a>
+
+                    <a href="./faq"
+                       class="block px-3 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                        FAQ
+                    </a>
+
+                </nav>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <article>
+
+        <header class="mb-12 border-b border-zinc-200 dark:border-zinc-800/60 pb-8">
+
+            <p class="text-xs uppercase tracking-wider text-indigo-500 font-semibold mb-3 code-font">
+                {{ page.product }}
+            </p>
+
+            <h1 class="text-4xl font-bold tracking-tight">
+                {{ page.title }}
+            </h1>
+
+            {% if page.description %}
+            <p class="mt-4 text-zinc-600 dark:text-zinc-400 max-w-2xl">
+                {{ page.description }}
+            </p>
+            {% endif %}
+
+        </header>
+
+        <section class="prose prose-zinc dark:prose-invert max-w-none">
+
+            {{ content }}
+
+        </section>
+
+    </article>
+
+</div>
