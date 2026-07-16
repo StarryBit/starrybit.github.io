@@ -14,3 +14,7 @@ kramdown:
 plugins:
   - jekyll-sitemap
   - jekyll-feed
+collections:
+  docs:
+    output: true
+    permalink: /docs/:path/
