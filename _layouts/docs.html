@@ -15,7 +15,15 @@ layout: default
                 </p>
                 <nav class="space-y-1 text-sm">
 
-                {% assign docs = site.docs | where: "product", page.product | sort: "order" %}
+                <!-- 1. Normalize the current page's product name to lowercase -->
+                {% assign current_product = page.product | downcase %}
+                
+                <!-- 2. Group all docs by their lowercase product name -->
+                {% assign all_groups = site.docs | group_by_exp: "item", "item.product | downcase" %}
+                
+                <!-- 3. Find the group that matches the current product and grab its items -->
+                {% assign current_group = all_groups | where: "name", current_product | first %}
+                {% assign docs = current_group.items | sort: "order" %}
                 
                 {% for doc in docs %}
                 <a href="{{ doc.url | relative_url }}"
