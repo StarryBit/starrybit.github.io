@@ -14,9 +14,7 @@ layout: default
                     Documentation
                 </p>
                 <nav class="space-y-1 text-sm">
-                    {% assign docs = site.docs
-                        | where: "product", page.product
-                        | sort: "order" %}
+                    {% assign products = site.docs | where_exp: "doc", "doc.description" %}
                     
                     {% for doc in docs %}
                     
