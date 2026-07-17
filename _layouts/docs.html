@@ -14,15 +14,20 @@ layout: default
                     Documentation
                 </p>
                 <nav class="space-y-1 text-sm">
-                    {% assign products = site.docs | where_exp: "doc", "doc.description" %}
-                    
-                    {% for doc in docs %}
-                    
-                    <a href="{{ doc.url | relative_url }}"
-                       class="block px-3 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 {% if doc.url == page.url %}bg-zinc-100 dark:bg-zinc-800 font-semibold{% endif %}">
-                        {{ doc.nav_title }}
-                    </a>         
-                    {% endfor %}
+
+                {% assign docs = site.docs
+                    | where: "product", page.product
+                    | sort: "order" %}
+                
+                {% for doc in docs %}
+                
+                <a href="{{ doc.url | relative_url }}"
+                   class="block px-3 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 {% if doc.url == page.url %}bg-zinc-100 dark:bg-zinc-800 font-semibold{% endif %}">
+                    {{ doc.nav_title }}
+                </a>
+                
+                {% endfor %}
+                
                 </nav>
             </div>
         </div>
