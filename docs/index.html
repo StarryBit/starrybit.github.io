@@ -1,45 +1,53 @@
 ---
 layout: default
-title: Documentation | StarryBit
 ---
 
-<section>
+<div class="grid lg:grid-cols-[260px_1fr] gap-12">
+    <!-- Sidebar -->
+    <aside class="hidden lg:block">
+        <div class="sticky top-24">
+            <div class="border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5">
+                <h2 class="font-bold text-lg">
+                    {{ page.product }}
+                </h2>
+                <p class="text-sm text-zinc-500 mt-1 mb-5">
+                    Documentation
+                </p>
+                <nav class="space-y-1 text-sm">
 
-    <!-- Header -->
-    <div class="mb-12 border-b border-zinc-200 dark:border-zinc-800/60 pb-8">
-        <h1 class="text-3xl font-bold tracking-tight mb-3">
-            Documentation
-        </h1>
-        <p class="text-zinc-600 dark:text-zinc-400 max-w-xl">
-            Official documentation and technical references for StarryBit products.
-        </p>
-    </div>
-
-    <!-- Documentation Cards -->
-    <section class="grid md:grid-cols-2 gap-6">
-
-        {% assign product_groups = site.docs | group_by: "product" %}
-
-        {% for group in product_groups %}
-            <!-- Sort the group by order and grab the first page as the main link -->
-            {% assign first_doc = group.items | sort: "order" | first %}
-        
-        <div class="p-6 border border-zinc-200 dark:border-zinc-800 rounded-2xl hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-colors">
-            <h2 class="text-xl font-bold mb-2">
-                {{ group.name }}
-            </h2>
-            
-            <p class="text-zinc-600 dark:text-zinc-400 mb-6 line-clamp-2">
-                {{ first_doc.description }}
-            </p>
-            
-            <a href="{{ first_doc.url | relative_url }}" class="text-indigo-500 font-semibold hover:text-indigo-600 dark:hover:text-indigo-400">
-                View Documentation &rarr;
-            </a>
+                {% assign docs = site.docs | where: "product", page.product | sort: "order" %}
+                
+                {% for doc in docs %}
+                <a href="{{ doc.url | relative_url }}"
+                   class="block px-3 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800/50 transition-colors {% if doc.url == page.url %}bg-zinc-100 dark:bg-zinc-800 font-semibold text-indigo-600 dark:text-indigo-400{% else %}text-zinc-600 dark:text-zinc-400{% endif %}">
+                    <!-- Added a fallback so it uses the page title if nav_title isn't set in front matter -->
+                    {{ doc.nav_title | default: doc.title }}
+                </a>
+                {% endfor %}
+                
+                </nav>
+            </div>
         </div>
+    </aside>
+    
+    <!-- Main Content -->
+    <article>
+        <header class="mb-12 border-b border-zinc-200 dark:border-zinc-800/60 pb-8">
+            <p class="text-xs uppercase tracking-wider text-indigo-500 font-semibold mb-3 code-font">
+                {{ page.product }}
+            </p>
+            <h1 class="text-4xl font-bold tracking-tight">
+                {{ page.title }}
+            </h1>
+            {% if page.description %}
+            <p class="mt-4 text-zinc-600 dark:text-zinc-400 max-w-2xl">
+                {{ page.description }}
+            </p>
+            {% endif %}
+        </header>
         
-        {% endfor %}
-
-    </section>
-
-</section>
+        <section class="prose prose-zinc dark:prose-invert max-w-none">
+            {{ content }}
+        </section>
+    </article>
+</div>
