@@ -15,23 +15,21 @@ layout: default
                 </p>
                 <nav class="space-y-1 text-sm">
 
-                {% assign docs = site.docs
-                    | where: "product", page.product
-                    | sort: "order" %}
+                {% assign docs = site.docs | where: "product", page.product | sort: "order" %}
                 
                 {% for doc in docs %}
-                
                 <a href="{{ doc.url | relative_url }}"
-                   class="block px-3 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 {% if doc.url == page.url %}bg-zinc-100 dark:bg-zinc-800 font-semibold{% endif %}">
-                    {{ doc.nav_title }}
+                   class="block px-3 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800/50 transition-colors {% if doc.url == page.url %}bg-zinc-100 dark:bg-zinc-800 font-semibold text-indigo-600 dark:text-indigo-400{% else %}text-zinc-600 dark:text-zinc-400{% endif %}">
+                    <!-- Added a fallback so it uses the page title if nav_title isn't set in front matter -->
+                    {{ doc.nav_title | default: doc.title }}
                 </a>
-                
                 {% endfor %}
                 
                 </nav>
             </div>
         </div>
     </aside>
+    
     <!-- Main Content -->
     <article>
         <header class="mb-12 border-b border-zinc-200 dark:border-zinc-800/60 pb-8">
@@ -47,6 +45,7 @@ layout: default
             </p>
             {% endif %}
         </header>
+        
         <section class="prose prose-zinc dark:prose-invert max-w-none">
             {{ content }}
         </section>
