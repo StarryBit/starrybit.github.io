@@ -18,7 +18,11 @@ title: Documentation | StarryBit
     <!-- Documentation Cards -->
     <section class="grid md:grid-cols-2 gap-6">
 
-        {% assign product_groups = site.docs | group_by: "product" %}
+        <!-- 1. Filter out any docs that don't belong to a product -->
+        {% assign valid_docs = site.docs | where_exp: "item", "item.product != nil" %}
+        
+        <!-- 2. Group them by a downcased version of the product name -->
+        {% assign product_groups = valid_docs | group_by_exp: "item", "item.product | downcase" %}
 
         {% for group in product_groups %}
             <!-- Sort the group by order and grab the first page as the main link -->
@@ -26,7 +30,8 @@ title: Documentation | StarryBit
         
         <div class="p-6 border border-zinc-200 dark:border-zinc-800 rounded-2xl hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-colors">
             <h2 class="text-xl font-bold mb-2">
-                {{ group.name }}
+                <!-- 3. Use first_doc.product instead of group.name to get the correct capitalization -->
+                {{ first_doc.product }}
             </h2>
             
             <p class="text-zinc-600 dark:text-zinc-400 mb-6 line-clamp-2">
