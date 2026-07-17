@@ -22,42 +22,26 @@ title: Documentation | StarryBit
     <!-- Documentation Cards -->
     <section class="grid md:grid-cols-2 gap-6">
 
-        {% for doc in site.docs %}
+        {% assign products = site.docs | where_exp: "doc", "doc.description" %}
 
-        <a href="{{ doc.url | relative_url }}"
-           class="group rounded-2xl border border-zinc-200 dark:border-zinc-800 p-6 hover:border-indigo-500 transition">
-
-            <div class="flex justify-between items-start mb-4">
-
-                <h2 class="text-xl font-bold group-hover:text-indigo-600 dark:group-hover:text-indigo-400">
-                    {{ doc.product }}
-                </h2>
-
-
-                {% if doc.version %}
-                <span class="text-xs text-zinc-500 code-font">
-                    v{{ doc.version }}
-                </span>
-                {% endif %}
-
-            </div>
-
-
-            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-5">
+        {% for doc in products %}
+        
+        <div class="card">
+        
+            <h2>
+                {{ doc.product_name }}
+            </h2>
+        
+            <p>
                 {{ doc.description }}
             </p>
-
-
-            {% if doc.category %}
-            <span class="inline-block text-xs px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800">
-                {{ doc.category }}
-            </span>
-            {% endif %}
-
-
-        </a>
-
-
+        
+            <a href="{{ doc.url | relative_url }}">
+                View Documentation
+            </a>
+        
+        </div>
+        
         {% endfor %}
 
     </section>
