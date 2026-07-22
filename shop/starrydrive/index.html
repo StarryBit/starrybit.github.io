@@ -4,287 +4,303 @@ title: StarryDrive | StarryBit
 permalink: /starrydrive/
 ---
 
-<main class="max-w-5xl mx-auto px-6 py-12 w-full flex-1 grid lg:grid-cols-12 gap-12">
-        <!-- Left Side: Video Showcase & Technical Specs -->
-        <div class="lg:col-span-7 space-y-8">
-            <!-- Video Aspect Ratio Box -->
-            <!-- Media Carousel -->
-<div class="relative w-full aspect-video bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm">
-
-    <div id="mediaCarousel" class="w-full h-full">
-
-        <!-- Video Slide (First) -->
-        <div class="media-slide w-full h-full">
-            <iframe 
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/pJLU87nFNXA"
-                title="StarryDrive Showcase"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-        </div>
-
-        <!-- Image Slides -->
-        <div class="media-slide hidden w-full h-full">
-            <img 
-                src="/assets/StarryDrive - One System, Endless Vehicles.png"
-                class="w-full h-full object-cover"
-                alt="One system, endless vehicles">
-        </div>
-
-        <div class="media-slide hidden w-full h-full">
-            <img 
-                src="/assets/StarryDrive - 2 Modes, Any Terrain.png"
-                class="w-full h-full object-cover"
-                alt="2 modes, any terrain">
-        </div>
-
-        <div class="media-slide hidden w-full h-full">
-            <img 
-                src="/assets/StarryDrive - Make it Drive Your Way.png"
-                class="w-full h-full object-cover"
-                alt="Make it drive your way">
-        </div>
-
-        <div class="media-slide hidden w-full h-full">
-            <img 
-                src="/assets/StarryDrive - Get Started Instantly.png"
-                class="w-full h-full object-cover"
-                alt="Get started instantly with 2 demo places">
-        </div>
-
-        <div class="media-slide hidden w-full h-full">
-            <img 
-                src="/assets/StarryDrive - Reconfigure Anytime.png"
-                class="w-full h-full object-cover"
-                alt="Reconfigure anytime by simply applying a new configuration">
-        </div>
-
-    </div>
-
-
-    <!-- Previous Button -->
-    <button 
-        onclick="changeSlide(-1)"
-        class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full w-10 h-10">
-        ‹
-    </button>
-
-    <!-- Next Button -->
-    <button 
-        onclick="changeSlide(1)"
-        class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white rounded-full w-10 h-10">
-        ›
-    </button>
-
-
-    <!-- Indicators -->
-    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-        <button onclick="setSlide(0)" class="carousel-dot w-2 h-2 rounded-full bg-white"></button>
-        <button onclick="setSlide(1)" class="carousel-dot w-2 h-2 rounded-full bg-white/40"></button>
-        <button onclick="setSlide(2)" class="carousel-dot w-2 h-2 rounded-full bg-white/40"></button>
-        <button onclick="setSlide(3)" class="carousel-dot w-2 h-2 rounded-full bg-white/40"></button>
-    </div>
-
+<!-- Fixed Ambient Blurred Background -->
+<div class="fixed inset-0 -z-10 pointer-events-none overflow-hidden" aria-hidden="true">
+    <img 
+        src="/assets/StarryDrive itch.io background.png" 
+        class="w-full h-full object-cover blur-3xl opacity-30 scale-125 dark:opacity-25" 
+        alt=""
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-zinc-950/80 via-zinc-950/90 to-zinc-950"></div>
 </div>
+
+<main class="max-w-5xl mx-auto px-6 py-12 w-full flex-1 grid lg:grid-cols-12 gap-12 text-zinc-100">
+
+    <!-- Left Side: Video Showcase & Technical Specs -->
+    <div class="lg:col-span-7 space-y-8">
         
-            <h2 class="text-xl font-bold mb-4">Stop Fighting Roblox Physics. Build Stable Vehicles in Minutes.</h2>
+        <!-- Media Carousel Container -->
+        <div class="relative w-full aspect-video bg-zinc-950 border border-zinc-800/80 rounded-xl overflow-hidden shadow-2xl">
+
+            <div id="mediaCarousel" class="w-full h-full">
+
+                <!-- Video Slide (First) -->
+                <div class="media-slide w-full h-full">
+                    <iframe 
+                        class="w-full h-full"
+                        src="https://www.youtube.com/embed/pJLU87nFNXA"
+                        title="StarryDrive Showcase"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <!-- Image Slides (Using object-contain to prevent image cropping) -->
+                <div class="media-slide hidden w-full h-full bg-zinc-950">
+                    <img 
+                        src="/assets/StarryDrive - One System, Endless Vehicles.png"
+                        class="w-full h-full object-contain"
+                        alt="One system, endless vehicles">
+                </div>
+
+                <div class="media-slide hidden w-full h-full bg-zinc-950">
+                    <img 
+                        src="/assets/StarryDrive - 2 Modes, Any Terrain.png"
+                        class="w-full h-full object-contain"
+                        alt="2 modes, any terrain">
+                </div>
+
+                <div class="media-slide hidden w-full h-full bg-zinc-950">
+                    <img 
+                        src="/assets/StarryDrive - Make it Drive Your Way.png"
+                        class="w-full h-full object-contain"
+                        alt="Make it drive your way">
+                </div>
+
+                <div class="media-slide hidden w-full h-full bg-zinc-950">
+                    <img 
+                        src="/assets/StarryDrive - Get Started Instantly.png"
+                        class="w-full h-full object-contain"
+                        alt="Get started instantly with 2 demo places">
+                </div>
+
+                <div class="media-slide hidden w-full h-full bg-zinc-950">
+                    <img 
+                        src="/assets/StarryDrive - Reconfigure Anytime.png"
+                        class="w-full h-full object-contain"
+                        alt="Reconfigure anytime by simply applying a new configuration">
+                </div>
+
+            </div>
+
+            <!-- Carousel Nav Controls -->
+            <button 
+                onclick="changeSlide(-1)"
+                class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 backdrop-blur-sm text-white rounded-full w-9 h-9 flex items-center justify-center transition-all border border-white/10">
+                ‹
+            </button>
+
+            <button 
+                onclick="changeSlide(1)"
+                class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 backdrop-blur-sm text-white rounded-full w-9 h-9 flex items-center justify-center transition-all border border-white/10">
+                ›
+            </button>
+
+            <!-- Indicators -->
+            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 bg-black/40 px-3 py-1.5 rounded-full backdrop-blur-md border border-white/10">
+                <button onclick="setSlide(0)" class="carousel-dot w-2 h-2 rounded-full bg-white transition-all"></button>
+                <button onclick="setSlide(1)" class="carousel-dot w-2 h-2 rounded-full bg-white/40 transition-all"></button>
+                <button onclick="setSlide(2)" class="carousel-dot w-2 h-2 rounded-full bg-white/40 transition-all"></button>
+                <button onclick="setSlide(3)" class="carousel-dot w-2 h-2 rounded-full bg-white/40 transition-all"></button>
+                <button onclick="setSlide(4)" class="carousel-dot w-2 h-2 rounded-full bg-white/40 transition-all"></button>
+                <button onclick="setSlide(5)" class="carousel-dot w-2 h-2 rounded-full bg-white/40 transition-all"></button>
+            </div>
+
+        </div>
         
-            <h2 class="text-xl font-bold mb-4">What's Included</h2>
-        
-            <ul class="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-                <li class="flex items-center gap-3">
-                    <svg class="w-4 h-4 text-indigo-600 dark:text-indigo-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span>StarryDrive Studio Plugin</span>
-                </li>
-                <li class="flex items-center gap-3">
-                    <svg class="w-4 h-4 text-indigo-600 dark:text-indigo-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span>Vehicle Setup Interface</span>
-                </li>
-                <li class="flex items-center gap-3">
-                    <svg class="w-4 h-4 text-indigo-600 dark:text-indigo-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span>Built-in Car, Kart, and Truck Presets</span>
-                </li>
-                <li class="flex items-center gap-3">
-                    <svg class="w-4 h-4 text-indigo-600 dark:text-indigo-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span>Complete Documentation</span>
-                </li>
-                <li class="flex items-center gap-3">
-                    <svg class="w-4 h-4 text-indigo-600 dark:text-indigo-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span>Quick Start Guide</span>
-                </li>
-                <li class="flex items-center gap-3">
-                    <svg class="w-4 h-4 text-indigo-600 dark:text-indigo-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span>Lifetime Updates</span>
-                </li>
-                <li class="flex items-center gap-3">
-                    <svg class="w-4 h-4 text-indigo-600 dark:text-indigo-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span>Discord Support</span>
-                </li>
-            </ul>
-        
-            <!-- Deep Architectural Details -->
+        <!-- Highlight Card -->
+        <div class="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/80 backdrop-blur-md shadow-lg space-y-6">
+            <h2 class="text-xl font-bold text-white tracking-tight">Stop Fighting Roblox Physics. Build Stable Vehicles in Minutes.</h2>
+            
             <div>
-                <h2 class="text-xl font-bold mb-4">Designed for Fast Iteration</h2>
-                <div class="space-y-4 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                <h3 class="text-sm font-semibold uppercase tracking-wider text-indigo-400 mb-3">What's Included</h3>
+                <ul class="grid sm:grid-cols-2 gap-3 text-sm text-zinc-300">
+                    <li class="flex items-center gap-2.5">
+                        <svg class="w-4 h-4 text-indigo-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>StarryDrive Studio Plugin</span>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <svg class="w-4 h-4 text-indigo-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>Vehicle Setup Interface</span>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <svg class="w-4 h-4 text-indigo-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>Car, Kart, & Truck Presets</span>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <svg class="w-4 h-4 text-indigo-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>Complete Documentation</span>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <svg class="w-4 h-4 text-indigo-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>Quick Start Guide</span>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <svg class="w-4 h-4 text-indigo-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>Lifetime Updates</span>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <svg class="w-4 h-4 text-indigo-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>Discord Support</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Details Card -->
+        <div class="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/80 backdrop-blur-md shadow-lg space-y-8">
+            <!-- Section 1 -->
+            <div>
+                <h2 class="text-lg font-bold text-white mb-3">Designed for Fast Iteration</h2>
+                <div class="space-y-4 text-sm text-zinc-300 leading-relaxed">
                     <p>
                         StarryDrive is a production-ready vehicle system for Roblox Studio that makes building drivable vehicles simple, predictable, and fast. Transform almost any vehicle model into a fully functional car with an intuitive setup panel, no hours of tweaking constraints or rebuilding suspension systems required.
                     </p>
-                
                     <p>
-                        Choose from built-in presets like <strong>Car</strong> and <strong>Kart</strong>, or fine-tune every aspect of the driving experience yourself, including suspension, steering, acceleration, top speed, drift strength, lift, and more. Every configuration is stored as Roblox Attributes, making vehicles easy to revisit, rebalance, and iterate on throughout development.
+                        Choose from built-in presets like <strong class="text-white">Car</strong> and <strong class="text-white">Kart</strong>, or fine-tune every aspect of the driving experience yourself, including suspension, steering, acceleration, top speed, drift strength, lift, and more. Every configuration is stored as Roblox Attributes, making vehicles easy to revisit, rebalance, and iterate on throughout development.
                     </p>
-                
                     <p>
                         Whether you're building an arcade racer, roleplay experience, or open-world driving game, StarryDrive provides a reliable foundation that lets you spend more time building your game, not fighting physics.
-                    </p>
-                
-                    <p>
-                        Every purchase includes comprehensive documentation, a Quick Start Guide, lifetime updates, and access to the community Discord for support and future releases.
                     </p>
                 </div>
             </div>
 
-            <div>
-                <h2 class="text-xl font-bold mb-4">Two Modes, One System</h2>
+            <hr class="border-zinc-800/60" />
 
-                <div class="space-y-4 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <!-- Section 2 -->
+            <div>
+                <h2 class="text-lg font-bold text-white mb-3">Two Modes, One System</h2>
+                <div class="space-y-4 text-sm text-zinc-300 leading-relaxed">
                     <p>
                         Every Roblox game has different driving requirements. StarryDrive includes two physics modes designed around different types of experiences, giving developers control over how their vehicles behave.
                     </p>
 
-                    <div class="grid gap-4 sm:grid-cols-2">
-                        <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-5">
-                            <h3 class="font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+                    <div class="grid gap-4 sm:grid-cols-2 pt-2">
+                        <div class="bg-zinc-950/60 border border-zinc-800/80 rounded-xl p-4">
+                            <h3 class="font-bold text-indigo-300 mb-1">
                                 Block Mode
                             </h3>
-                            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                                Built for traditional Roblox Part-based maps. Provides stable, predictable arcade handling with responsive steering, smooth suspension, and reliable vehicle control.
+                            <p class="text-xs text-zinc-400 leading-relaxed">
+                                Built for traditional Roblox Part-based maps. Provides stable, predictable arcade handling with responsive steering and smooth suspension.
                             </p>
                         </div>
 
-                        <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-5">
-                            <h3 class="font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+                        <div class="bg-zinc-950/60 border border-zinc-800/80 rounded-xl p-4">
+                            <h3 class="font-bold text-indigo-300 mb-1">
                                 Terrain Mode
                             </h3>
-                            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                                Designed for open worlds and uneven landscapes. Vehicles adapt to terrain slopes, bumps, and changing surfaces with terrain-based suspension.
+                            <p class="text-xs text-zinc-400 leading-relaxed">
+                                Designed for open worlds and uneven landscapes. Vehicles adapt dynamically to terrain slopes, bumps, and changing surfaces.
                             </p>
                         </div>
                     </div>
-
-                    <p>
-                        Switch between modes directly from the setup panel and build the driving experience your game needs without replacing your vehicle system.
-                    </p>
                 </div>
             </div>
-                
+
+            <hr class="border-zinc-800/60" />
+
+            <!-- Section 3 -->
             <div>
-                <h2 class="text-xl font-bold mb-4">Why I Built StarryDrive</h2>
-                <div class="space-y-4 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                <h2 class="text-lg font-bold text-white mb-3">Why I Built StarryDrive</h2>
+                <div class="space-y-4 text-sm text-zinc-300 leading-relaxed">
                     <p>
-                        Like many Roblox developers, I spent countless hours trying to build vehicles using Roblox's constraint system. While constraints are incredibly powerful, creating a vehicle that feels stable, responsive, and reliable often requires constant tweaking, and sometimes one unexpected bump is enough to send everything flying.
+                        Like many Roblox developers, I spent countless hours trying to build vehicles using Roblox's constraint system. While constraints are incredibly powerful, creating a vehicle that feels stable, responsive, and reliable often requires constant tweaking—and sometimes one unexpected bump is enough to send everything flying.
                     </p>
-                
                     <p>
-                        I built StarryDrive to remove that frustration. Instead of repeatedly balancing dozens of physics values, developers can configure a vehicle in minutes, make adjustments whenever they need, and focus on creating great gameplay instead of debugging suspension.
-                    </p>
-                
-                    <p>
-                        My goal was simple: create a vehicle system that is easy to set up, enjoyable to customize, and dependable enough to use in real production projects.
+                        I built StarryDrive to remove that frustration. Instead of repeatedly balancing dozens of physics values, developers can configure a vehicle in minutes and focus on creating great gameplay instead of debugging suspension.
                     </p>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Right Side: Conversion Box & Pricing -->
-        <div class="lg:col-span-5">
-            <div class="sticky top-24 border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900/30 p-6 rounded-2xl space-y-6 shadow-sm">
-                <div>
-                    <h1 class="text-2xl font-bold mb-1">StarryDrive</h1>
-                    <p class="text-sm text-zinc-600 dark:text-zinc-400">Production-ready vehicle system for Roblox Studio</p>
-                    <p class="text-xs text-zinc-500 code-font">v2.0.0 &bull; Actively Maintained</p>
+    <!-- Right Side: Conversion Box & Pricing -->
+    <div class="lg:col-span-5">
+        <div class="sticky top-24 border border-zinc-800/80 bg-zinc-900/60 backdrop-blur-xl p-6 rounded-2xl space-y-6 shadow-2xl">
+            <div>
+                <div class="flex items-center justify-between mb-1">
+                    <h1 class="text-2xl font-bold text-white tracking-tight">StarryDrive</h1>
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Plugin</span>
                 </div>
+                <p class="text-sm text-zinc-400">Production-ready vehicle system for Roblox Studio</p>
+                <p class="text-xs text-zinc-500 code-font mt-2">v2.0.0 &bull; Actively Maintained</p>
+            </div>
 
-                <div class="text-3xl font-bold code-font">
-                    $7.99 <span class="text-xs text-zinc-500 font-normal">USD</span>
+            <div class="text-3xl font-bold code-font text-white flex items-baseline gap-1">
+                $7.99 <span class="text-xs text-zinc-400 font-normal">USD</span>
+            </div>
+
+            <!-- Primary Funnel Buttons -->
+            <div class="space-y-3">
+                <a href="https://starrybit.itch.io/starrydrive" target="_blank" class="block w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl transition-all text-sm shadow-lg shadow-indigo-600/20 border border-indigo-400/30">
+                    Buy on Itch.io
+                </a>
+                <a href="https://www.roblox.com/games/135321393424641/StarryDrive-Block-Racing" target="_blank" class="block w-full text-center bg-zinc-800/80 hover:bg-zinc-700/80 border border-zinc-700/50 text-zinc-200 font-medium py-3 rounded-xl transition-all text-sm code-font">
+                    Launch Live Demo
+                </a>
+            </div>
+
+            <!-- Feature Verification List -->
+            <div class="border-t border-zinc-800/80 pt-5 space-y-4 text-xs">
+                <div class="flex items-start gap-3">
+                    <svg class="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <div>
+                        <strong class="text-zinc-200 block mb-0.5">Customizable Physics</strong>
+                        <span class="text-zinc-400 leading-relaxed">Tune suspension, steering, speed, drift, braking, and more.</span>
+                    </div>
                 </div>
-
-                <!-- Primary Funnel Buttons -->
-                <div class="space-y-3">
-                        <a href="https://starrybit.itch.io/starrydrive" target="_blank" class="block w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl transition-colors text-sm shadow-sm">Buy on Itch.io</a>
-                        <a href="https://www.roblox.com/games/135321393424641/StarryDrive-Block-Racing" target="_blank" class="block w-full text-center bg-zinc-100 hover:bg-zinc-200 border border-zinc-200 text-zinc-800 dark:bg-zinc-900 dark:hover:bg-zinc-800 dark:border-zinc-800 dark:text-zinc-200 font-medium py-3 rounded-xl transition-colors text-sm code-font">Launch Live Demo</a>
+                <div class="flex items-start gap-3">
+                    <svg class="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <div>
+                        <strong class="text-zinc-200 block mb-0.5">Block & Terrain Physics</strong>
+                        <span class="text-zinc-400 leading-relaxed">Choose stable arcade handling or terrain-based suspension for open worlds.</span>
+                    </div>
                 </div>
-
-                <!-- Feature Verification List -->
-                <div class="border-t border-zinc-200 dark:border-zinc-800/60 pt-5 space-y-4 text-xs">
-                    <div class="flex items-start gap-3">
-                        <svg class="w-4 h-4 text-indigo-600 dark:text-indigo-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        <div>
-                            <strong class="text-zinc-900 dark:text-zinc-100 block mb-0.5">Customizable Physics</strong>
-                            <span class="text-zinc-600 dark:text-zinc-400 leading-relaxed">Tune suspension, steering, speed, drift, braking, and more.</span>
-                        </div>
+                <div class="flex items-start gap-3">
+                    <svg class="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <div>
+                        <strong class="text-zinc-200 block mb-0.5">Works With Your Models</strong>
+                        <span class="text-zinc-400 leading-relaxed">Turn almost any 3D model into a drivable vehicle in minutes.</span>
                     </div>
-                    <div class="flex items-start gap-3">
-                        <svg class="w-4 h-4 text-indigo-600 dark:text-indigo-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        <div>
-                            <strong class="text-zinc-900 dark:text-zinc-100 block mb-0.5">Block & Terrain Physics</strong>
-                            <span class="text-zinc-600 dark:text-zinc-400 leading-relaxed">Choose stable arcade handling or terrain-based suspension for open worlds.</span>
-                        </div>
+                </div>
+                <div class="flex items-start gap-3">
+                    <svg class="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <div>
+                        <strong class="text-zinc-200 block mb-0.5">Quick Setup</strong>
+                        <span class="text-zinc-400 leading-relaxed">Apply presets or build your own handling profile with the setup panel.</span>
                     </div>
-                    <div class="flex items-start gap-3">
-                        <svg class="w-4 h-4 text-indigo-600 dark:text-indigo-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        <div>
-                            <strong class="text-zinc-900 dark:text-zinc-100 block mb-0.5">Works With Your Models</strong>
-                            <span class="text-zinc-600 dark:text-zinc-400 leading-relaxed">Turn almost any 3D model into a drivable vehicle in minutes.</span>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <svg class="w-4 h-4 text-indigo-600 dark:text-indigo-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        <div>
-                            <strong class="text-zinc-900 dark:text-zinc-100 block mb-0.5">Quick Setup</strong>
-                            <span class="text-zinc-600 dark:text-zinc-400 leading-relaxed">Apply presets or build your own handling profile with the setup panel.</span>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <svg class="w-4 h-4 text-indigo-600 dark:text-indigo-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        <div>
-                            <strong class="text-zinc-900 dark:text-zinc-100 block mb-0.5">Lifetime Updates & Support</strong>
-                            <span class="text-zinc-600 dark:text-zinc-400 leading-relaxed">Includes documentation, Discord support, and all future updates.</span>
-                        </div>
+                </div>
+                <div class="flex items-start gap-3">
+                    <svg class="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <div>
+                        <strong class="text-zinc-200 block mb-0.5">Lifetime Updates & Support</strong>
+                        <span class="text-zinc-400 leading-relaxed">Includes documentation, Discord support, and all future updates.</span>
                     </div>
                 </div>
             </div>
         </div>
-<script>
-let currentSlide = 0;
+    </div>
 
-const slides = document.querySelectorAll(".media-slide");
-const dots = document.querySelectorAll(".carousel-dot");
+    <!-- Carousel JavaScript -->
+    <script>
+    let currentSlide = 0;
 
-function showSlide(index) {
-    if (index >= slides.length) currentSlide = 0;
-    else if (index < 0) currentSlide = slides.length - 1;
-    else currentSlide = index;
+    const slides = document.querySelectorAll(".media-slide");
+    const dots = document.querySelectorAll(".carousel-dot");
 
-    slides.forEach((slide, i) => {
-        slide.classList.toggle("hidden", i !== currentSlide);
-    });
+    function showSlide(index) {
+        if (index >= slides.length) currentSlide = 0;
+        else if (index < 0) currentSlide = slides.length - 1;
+        else currentSlide = index;
 
-    dots.forEach((dot, i) => {
-        dot.classList.toggle("bg-white/40", i !== currentSlide);
-        dot.classList.toggle("bg-white", i === currentSlide);
-    });
-}
+        slides.forEach((slide, i) => {
+            slide.classList.toggle("hidden", i !== currentSlide);
+        });
 
-function changeSlide(direction) {
-    showSlide(currentSlide + direction);
-}
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("bg-white/40", i !== currentSlide);
+            dot.classList.toggle("bg-white", i === currentSlide);
+        });
+    }
 
-function setSlide(index) {
-    showSlide(index);
-}
-</script>
+    function changeSlide(direction) {
+        showSlide(currentSlide + direction);
+    }
+
+    function setSlide(index) {
+        showSlide(index);
+    }
+    </script>
         
 </main>
