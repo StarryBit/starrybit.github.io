@@ -28,7 +28,7 @@ A perfectly rectangular chassis can easily catch on ledges, ramps, curbs, or une
 For smoother driving, consider adding a small triangular wedge to the front of the chassis to act as a bumper. This gives the vehicle a sled-like front, allowing it to glide onto obstacles instead of hitting them with a flat edge.
 </p>
 
-<img src="/images/starrydrive/physics-bumper.png" class="rounded-xl border" alt="Front bumper example">
+<img src="{{ '/assets/starrydrive/Screenshot 2026-07-19 152056.png' | relative_url }}">
 
 <p>
 This improves how the vehicle transitions over bumps by giving the suspension slightly more time to react as the front climbs the obstacle instead of stopping abruptly.
