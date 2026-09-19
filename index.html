@@ -25,6 +25,62 @@ description: Portfolio of StarryBit, a Roblox developer creating scalable Roblox
     </div>
 </header>
 
+<!-- Top 2 Spotlight Flex -->
+<section id="spotlight" class="py-12 mb-12">
+    <div class="grid lg:grid-cols-2 gap-6 md:gap-8">
+        
+        <!-- Flex 1: Top Game (ECHOPULSE) -->
+        <a href="/games/echopulse" class="group relative block h-[450px] md:h-[500px] w-full overflow-hidden rounded-3xl bg-zinc-900 shadow-xl ring-1 ring-zinc-200 dark:ring-zinc-800 transition-all hover:shadow-2xl hover:shadow-indigo-500/20">
+            <!-- Background Image -->
+            <img src="/assets/echopulse website banner.png" alt="ECHOPULSE Gameplay" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
+            <!-- Gradient Overlay for Text Legibility -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+            
+            <!-- Content -->
+            <div class="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
+                <span class="inline-flex items-center gap-2 text-cyan-400 font-bold tracking-wider text-xs uppercase mb-3 code-font drop-shadow-md">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> Active Project
+                </span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-3 leading-tight drop-shadow-lg tracking-tight">
+                    ECHOPULSE
+                </h2>
+                <p class="text-zinc-200 text-base md:text-lg max-w-md mb-6 drop-shadow-md line-clamp-2">
+                    An immersive echolocation stealth-horror game where sound is sight.
+                </p>
+                <div class="flex items-center gap-4">
+                    <span class="bg-white text-zinc-900 font-bold px-6 py-3 rounded-full text-sm hover:bg-zinc-200 transition-colors">
+                        View Game Details
+                    </span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Flex 2: Recent Showcase (StarryDrive) -->
+        <a href="/devlogs/new-vehicle-controller" class="group relative block h-[450px] md:h-[500px] w-full overflow-hidden rounded-3xl bg-zinc-900 shadow-xl ring-1 ring-zinc-200 dark:ring-zinc-800 transition-all hover:shadow-2xl hover:shadow-purple-500/20">
+            <img src="/assets/Screenshot 2026-07-13 171010.png" alt="StarryDrive Vehicle System" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-70 group-hover:opacity-90">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+            
+            <div class="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
+                <span class="text-purple-400 font-bold tracking-wider text-xs uppercase mb-3 code-font drop-shadow-md">
+                    Latest System Release
+                </span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-3 leading-tight drop-shadow-lg tracking-tight">
+                    StarryDrive Architecture
+                </h2>
+                <p class="text-zinc-200 text-base md:text-lg max-w-md mb-6 drop-shadow-md line-clamp-2">
+                    A highly scalable, plug-and-play vehicle system bypassing standard constraints.
+                </p>
+                <div class="flex items-center gap-4">
+                    <span class="bg-white/20 backdrop-blur-md text-white font-bold px-6 py-3 rounded-full text-sm border border-white/30 group-hover:bg-white/30 transition-colors">
+                        Read the Devlog
+                    </span>
+                </div>
+            </div>
+        </a>
+
+    </div>
+</section>
+
 <!-- Featured Work (Moved to top for Portfolio focus) -->
 <!-- Using a 2-column grid instead of 3 allows for much bigger, high-impact hero images -->
 <section id="portfolio" class="py-16">
