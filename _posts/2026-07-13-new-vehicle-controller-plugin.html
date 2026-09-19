@@ -2,69 +2,67 @@
 layout: post
 title: "New Vehicle Controller Plugin"
 date: 2026-07-13
-excerpt: "Making a custom vehicle controller to bypass Roblox physics constraints"
+description: "Creating a custom vehicle controller and plugin to bypass Roblox physics constraints and build a scalable, plug-and-play vehicle system."
 image: "/assets/Screenshot 2026-07-14 223737.png"
 ---
 
-<section class="space-y-8">
-
+<section class="space-y-12">
     <div>
-        <h1 class="text-xl font-bold mb-2">
-            What I worked on
-        </h1>
-
-        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-          I expanded on my controller from the previous devlog by creating a new plugin for it. This is part of my bigger mission to make an easy-to-use, plug-and-play vehicle system on Roblox, and by creating this, it is now very easy to set up any vehicle with my system, regardless of shape, size, weight, etc.
+        <h2 class="text-2xl font-bold mb-4 text-zinc-900 dark:text-white">What I worked on</h2>
+        <p>
+            I expanded on my controller from the previous devlog by creating a new plugin for it. This is part of my bigger mission to make an easy-to-use, plug-and-play vehicle system on Roblox. By creating this, it is now very easy to set up any vehicle with my system, regardless of shape, size, or weight.
         </p>
     </div>
 
-
-    <div class="space-y-6">
-        <h1 class="text-xl font-bold mb-2">
-            Background
-        </h1>
-        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            I have been working towards this level of simplicity since the beginning of this project by exposing as many variables as I could as attributes. I am still tuning this, of course, to give more control, but it already supports presets such as car, truck, and kart with varying settings like max speed, turn speed, drift strength, acceleration, etc. Originally, I was working on a racing template, but the vehicle system was already getting pretty involved, and I wanted it to be easier to use and configure instead of having one script designed for one type of system. I switched gears a bit to focus more on the vehicle system and decided to transform it into one big vehicle system that can support various configurations and setups and seamlessly convert them into one capable of my system.
+    <div>
+        <h2 class="text-2xl font-bold mb-4 text-zinc-900 dark:text-white">Background</h2>
+        <p class="mb-6">
+            I have been working towards this level of simplicity since the beginning of this project by exposing as many variables as I could as attributes. It already supports presets such as car, truck, and kart with varying settings like max speed, turn speed, drift strength, and acceleration. 
         </p>
-        <div class="image-gallery">
+        <p>
+            Originally, I was working on a racing template, but I wanted it to be easier to configure instead of having one script designed for one type of system. I switched gears to focus on a unified vehicle system that seamlessly converts custom setups into a capable driving model.
+        </p>
+        
+        <div class="image-gallery my-8">
             <img src="/assets/Screenshot 2026-07-13 171010.png" alt="New vehicle configuration plugin panel open on the right">
         </div>
-        <div class="video-wrapper">
+        
+        <div class="video-wrapper my-8">
           <iframe 
               src="https://www.youtube.com/embed/Dlx-w3ayq8A" 
+              title="Vehicle System Demo"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
               allowfullscreen>
           </iframe>
         </div>
-        <h1 class="text-xl font-bold mb-2">
-            Technical Breakdown
-        </h1>
-        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            It's set up with a pretty straightforward interface to select the model of a vehicle, its primary part (more on that because it's the single most important part), its seat, and a few other visual components such as wheels and exhaust. Everything aside from the primary part and the seat is basically visual and has no impact on its functionality. I still have yet to add the visual features (such as wheels turning and exhaust fumes), but they're there for now as placeholders.
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4 text-zinc-900 dark:text-white">Technical Breakdown</h2>
+        <p>
+            It's set up with a straightforward interface to select the model of a vehicle, its primary part (the single most important part), its seat, and placeholder visual components such as wheels and exhaust. Everything aside from the primary part and the seat is basically visual.
         </p>
-        <h1 class="text-xl font-bold mb-2">
-            The Primary Part
-        </h1>
-        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            I'm going to talk a bit about how the raycast system is set up because it's important for the primary part. There are other options for handling wheel positions, but I decided it wasn't worth it since it introduces more complex physics to balance and informing people about proper wheel placements that might not be as intuitive as simply having them in all four corners. I will likely revisit this choice later, but for now, it's set up so that each corner of the primary part, which can be any regular base part in contact with the ground, gets a raycast directed at the ground:
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4 text-zinc-900 dark:text-white">The Primary Part & Raycasting</h2>
+        <p class="mb-6">
+            There are other options for handling wheel positions, but I decided they introduce more complex physics to balance. Instead, each corner of the primary part gets a raycast directed at the ground:
         </p>
-        <div class="image-gallery">
-            <img src="/assets/Screenshot 2026-07-14 223737.png" alt="My Roblox character driving a part with green neon rods at each corner to visualize raycast validation">
+        
+        <div class="image-gallery my-8">
+            <img src="/assets/Screenshot 2026-07-14 223737.png" alt="Visualizing raycast validation with neon rods at each vehicle corner">
         </div>
-        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            Because suspension and overall movement are calculated based on these points, the wheels need to be directly at each corner of the primary part for the visual wheel placement to align with the actual movement. All of the physics (such as suspension, grip, and drag) are based on the primary part, so that's why it needs to be touching the ground (just keep it invisible, and it has no impact on the overall look of the vehicle).
+        
+        <p>
+            Because suspension and overall movement are calculated based on these points, the wheels need to be directly at each corner of the primary part for the visual placement to align with the actual movement. All physics (suspension, grip, drag) are based on the primary part, so it must be touching the ground (kept invisible).
         </p>
-        <h1 class="text-xl font-bold mb-2">
-            Suspension, Drag, and Grip
-        </h1>
-        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            I also added suspension, drag, and grip to balance this out. This has given the vehicle a much more reliable and realistic feel. I had some issues before when adding the suspension because it had no counterbalance, so the kart would infinitely accelerate, which reminded me that I dropped all physical properties in the system and friction didn't exist, so I added some artificial friction and grip for better steering control.
-        </p>
-        <h1 class="text-xl font-bold mb-2">
-            Up Next
-        </h1>
-        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            I'll be expanding on the attributes and the system to give more control and add in the visual features (like the wheels and steering wheel). But so far, I'm super excited about where this is going! It will be effortless to make a reliable and entertaining vehicle in Roblox with this system and the options to create various kinds of vehicles.
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4 text-zinc-900 dark:text-white">Up Next</h2>
+        <p>
+            I'll be expanding on the attributes and the system to give more control and add in the visual features. So far, I'm super excited about where this is going! It will be effortless to make a reliable and entertaining vehicle in Roblox with this system.
         </p>
     </div>
 </section>
