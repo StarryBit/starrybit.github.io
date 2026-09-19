@@ -2,73 +2,50 @@
 layout: default
 ---
 
-<article>
+<!-- Centered, constrained width for optimal reading experience -->
+<article class="max-w-3xl mx-auto">
+    <header class="mb-12 border-b border-zinc-200 dark:border-zinc-800/60 pb-8 pt-8">
+        <div class="flex items-center gap-3 mb-4">
+            <span class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 dark:bg-indigo-500/10 dark:text-indigo-400 dark:border-indigo-500/20 code-font">
+                Devlog
+            </span>
+            <time datetime="{{ page.date | date_to_xmlschema }}" class="text-sm text-zinc-500 font-medium code-font">
+                {{ page.date | date: "%B %d, %Y" }}
+            </time>
+        </div>
+        <!-- This is the single H1 for SEO -->
+        <h1 class="text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-tight">
+            {{ page.title }}
+        </h1>
+    </header>
 
-<header class="mb-12 border-b border-zinc-200 dark:border-zinc-800/60 pb-8">
-
-    <div class="flex items-center gap-3 mb-4">
-
-        <span class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-indigo-50 text-indigo-600 border border-indigo-100 dark:bg-indigo-500/10 dark:text-indigo-400 dark:border-indigo-500/20 code-font">
-            Devlog
-        </span>
-
-        <span class="text-xs text-zinc-500 code-font">
-            {{ page.date | date: "%B %d, %Y" }}
-        </span>
-
+    <div class="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed space-y-6">
+        {{ content }}
     </div>
 
+    <!-- Devlog Navigation -->
+    <nav class="mt-20 pt-8 border-t border-zinc-200 dark:border-zinc-800/60 flex justify-between gap-6">
+        {% if page.previous %}
+        <a href="{{ page.previous.url | relative_url }}" class="group max-w-[45%]">
+            <p class="text-xs text-zinc-500 uppercase tracking-wider font-bold mb-2">← Previous</p>
+            <p class="text-base font-medium text-zinc-900 dark:text-zinc-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                {{ page.previous.title }}
+            </p>
+        </a>
+        {% else %}
+        <div></div>
+        {% endif %}
 
-    <h1 class="text-3xl font-bold tracking-tight">
-        {{ page.title }}
-    </h1>
-
-</header>
-
-
-<section>
-    {{ content }}
-</section>
-
-
-<!-- Devlog Navigation -->
-<nav class="mt-16 pt-8 border-t border-zinc-200 dark:border-zinc-800/60 flex justify-between gap-6">
-
-    {% if page.previous %}
-    <a href="{{ page.previous.url | relative_url }}"
-       class="group max-w-[45%]">
-
-        <p class="text-xs text-zinc-500 code-font mb-1">
-            ← Previous Devlog
-        </p>
-
-        <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-            {{ page.previous.title }}
-        </p>
-
-    </a>
-    {% else %}
-    <div></div>
-    {% endif %}
-
-
-
-    {% if page.next %}
-    <a href="{{ page.next.url | relative_url }}"
-       class="group max-w-[45%] text-right">
-
-        <p class="text-xs text-zinc-500 code-font mb-1">
-            Next Devlog →
-        </p>
-
-        <p class="text-sm font-medium text-zinc-900 dark:text-zinc-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-            {{ page.next.title }}
-        </p>
-
-    </a>
-    {% endif %}
-
-</nav>
+        {% if page.next %}
+        <a href="{{ page.next.url | relative_url }}" class="group max-w-[45%] text-right">
+            <p class="text-xs text-zinc-500 uppercase tracking-wider font-bold mb-2">Next →</p>
+            <p class="text-base font-medium text-zinc-900 dark:text-zinc-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                {{ page.next.title }}
+            </p>
+        </a>
+        {% endif %}
+    </nav>
+</article>
 <style>
 
 .image-gallery {
@@ -289,4 +266,3 @@ document.querySelectorAll(".image-gallery").forEach(gallery => {
 });
 
 </script>
-</article>
