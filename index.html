@@ -4,14 +4,20 @@ title: StarryBit | Software & Roblox Systems Engineering
 description: Portfolio of StarryBit, a Roblox developer creating scalable Roblox systems, immersive games like ECHOPULSE, and plug-and-play developer tools.
 ---
 
+<style>
+    /* Utility to hide scrollbar for the sleek carousel look */
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+
 <!-- Hero Section -->
-<header class="relative pt-20 pb-28">
+<header class="relative pt-20 pb-24">
     <div class="max-w-4xl">
         <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1] text-zinc-900 dark:text-white">
             Engineering <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-cyan-500">Immersive Worlds</span> & Scalable Systems.
         </h1>
         <p class="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed mb-10 max-w-2xl">
-            I'm StarryBit, developer behind ECHOPULSE. I specialize in complex mechanics, plug-and-play developer tools, and scalable architecture for Roblox.
+            I'm StarryBit and the developer behind ECHOPULSE. I specialize in complex mechanics, plug-and-play developer tools, and scalable architecture for Roblox.
         </p>
         <div class="flex flex-wrap items-center gap-5">
             <a href="#portfolio" class="bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-semibold px-7 py-3.5 rounded-full transition-transform hover:scale-105 shadow-md text-base">
@@ -24,125 +30,112 @@ description: Portfolio of StarryBit, a Roblox developer creating scalable Roblox
     </div>
 </header>
 
-<!-- Top Spotlight Section -->
-<section id="spotlight" class="py-6 mb-16">
-    <div class="grid lg:grid-cols-2 gap-6 md:gap-8">
+<!-- Spotlight Section (Full Pro Banners) -->
+<!-- Uses a stacked layout with a left-to-right gradient so the right half of your image is fully visible and unclouded -->
+<section id="spotlight" class="py-8 mb-16 space-y-10">
+    
+    <!-- Banner 1: ECHOPULSE -->
+    <a href="/games/echopulse" class="group relative block w-full aspect-[4/3] md:aspect-[21/9] lg:aspect-[2.5/1] overflow-hidden rounded-3xl bg-zinc-900 shadow-xl ring-1 ring-zinc-200 dark:ring-zinc-800 transition-all hover:shadow-2xl hover:shadow-cyan-500/20">
+        <!-- Background Image -->
+        <img src="/assets/echopulse website banner.png" alt="ECHOPULSE Gameplay" class="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-1000 group-hover:scale-105">
         
-        <!-- Flex 1: ECHOPULSE -->
-        <a href="/games/echopulse" class="group relative block aspect-video w-full overflow-hidden rounded-3xl bg-zinc-900 shadow-xl ring-1 ring-zinc-200 dark:ring-zinc-800 transition-all hover:shadow-2xl hover:shadow-indigo-500/20">
-            <img src="/assets/echopulse website banner.png" alt="ECHOPULSE Gameplay" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
-            
-            <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
-                <span class="inline-flex items-center gap-2 text-cyan-400 font-bold tracking-wider text-xs uppercase mb-2 code-font drop-shadow-md">
-                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> Active Project
+        <!-- Left-to-Right Gradient (Allows the right side of the image to stay fully visible) -->
+        <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-zinc-950 via-zinc-950/80 md:via-zinc-950/90 to-transparent md:to-transparent/10"></div>
+        
+        <!-- Content -->
+        <div class="absolute inset-0 flex flex-col justify-end md:justify-center p-8 md:p-14 md:w-2/3 lg:w-1/2">
+            <span class="inline-flex items-center gap-2 text-cyan-400 font-bold tracking-wider text-xs uppercase mb-4 code-font drop-shadow-md">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> Active Project
+            </span>
+            <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight tracking-tight">
+                ECHOPULSE
+            </h2>
+            <p class="text-zinc-300 text-lg md:text-xl mb-8 line-clamp-3">
+                An immersive echolocation stealth-horror game where sound is sight.
+            </p>
+            <div>
+                <span class="inline-flex items-center gap-2 bg-white text-zinc-900 font-bold px-6 py-3 rounded-full text-sm hover:bg-zinc-200 transition-colors">
+                    View Game Details <span aria-hidden="true">&rarr;</span>
                 </span>
-                <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-2 leading-tight drop-shadow-lg tracking-tight">
-                    ECHOPULSE
-                </h2>
-                <p class="text-zinc-300 text-sm md:text-base max-w-md mb-5 drop-shadow-md line-clamp-2">
-                    An immersive echolocation stealth-horror game where sound is sight.
-                </p>
-                <div>
-                    <span class="inline-block bg-white text-zinc-900 font-bold px-5 py-2.5 rounded-full text-xs md:text-sm hover:bg-zinc-200 transition-colors">
-                        View Game Details
-                    </span>
-                </div>
             </div>
-        </a>
+        </div>
+    </a>
 
-        <!-- Flex 2: StarryDrive -->
-        <a href="/devlogs/new-vehicle-controller" class="group relative block aspect-video w-full overflow-hidden rounded-3xl bg-zinc-900 shadow-xl ring-1 ring-zinc-200 dark:ring-zinc-800 transition-all hover:shadow-2xl hover:shadow-purple-500/20">
-            <img src="/assets/Screenshot 2026-07-13 171010.png" alt="StarryDrive Vehicle System" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-70 group-hover:opacity-90">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
-            
-            <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
-                <span class="text-purple-400 font-bold tracking-wider text-xs uppercase mb-2 code-font drop-shadow-md">
-                    Latest System Release
+    <!-- Banner 2: StarryDrive -->
+    <a href="/devlogs/new-vehicle-controller" class="group relative block w-full aspect-[4/3] md:aspect-[21/9] lg:aspect-[2.5/1] overflow-hidden rounded-3xl bg-zinc-900 shadow-xl ring-1 ring-zinc-200 dark:ring-zinc-800 transition-all hover:shadow-2xl hover:shadow-purple-500/20">
+        <img src="/assets/Screenshot 2026-07-13 171010.png" alt="StarryDrive Vehicle System" class="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-1000 group-hover:scale-105">
+        
+        <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-zinc-950 via-zinc-950/80 md:via-zinc-950/90 to-transparent md:to-transparent/10"></div>
+        
+        <div class="absolute inset-0 flex flex-col justify-end md:justify-center p-8 md:p-14 md:w-2/3 lg:w-1/2">
+            <span class="text-purple-400 font-bold tracking-wider text-xs uppercase mb-4 code-font drop-shadow-md">
+                Latest System Release
+            </span>
+            <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight tracking-tight">
+                StarryDrive Architecture
+            </h2>
+            <p class="text-zinc-300 text-lg md:text-xl mb-8 line-clamp-3">
+                A highly scalable, plug-and-play vehicle system bypassing standard constraints.
+            </p>
+            <div>
+                <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-white font-bold px-6 py-3 rounded-full text-sm border border-white/20 group-hover:bg-white/20 transition-colors">
+                    Read the Devlog <span aria-hidden="true">&rarr;</span>
                 </span>
-                <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-2 leading-tight drop-shadow-lg tracking-tight">
-                    StarryDrive Architecture
-                </h2>
-                <p class="text-zinc-300 text-sm md:text-base max-w-md mb-5 drop-shadow-md line-clamp-2">
-                    A highly scalable, plug-and-play vehicle system bypassing standard constraints.
-                </p>
-                <div>
-                    <span class="inline-block bg-white/20 backdrop-blur-md text-white font-bold px-5 py-2.5 rounded-full text-xs md:text-sm border border-white/30 group-hover:bg-white/30 transition-colors">
-                        Read the Devlog
-                    </span>
-                </div>
             </div>
-        </a>
+        </div>
+    </a>
 
-    </div>
 </section>
 
-<!-- Featured Work (16:9 Full Widescreen Banners) -->
-<section id="portfolio" class="py-12">
-    <div class="mb-10">
-        <h2 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white">Selected Projects</h2>
-        <p class="text-zinc-600 dark:text-zinc-400 mt-2 text-lg">Detailed showcases of recent games, architecture, and plugins.</p>
+<!-- Selected Projects (Swipeable Carousel) -->
+<section id="portfolio" class="py-16">
+    <div class="mb-8 flex items-end justify-between">
+        <div>
+            <h2 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white">Selected Projects</h2>
+            <p class="text-zinc-600 dark:text-zinc-400 mt-2 text-lg">Swipe to explore recent games, systems, and open-source tools.</p>
+        </div>
+        <!-- Optional Desktop Hint -->
+        <div class="hidden md:flex gap-2 text-zinc-400">
+            <svg class="w-6 h-6 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </div>
     </div>
     
-    <div class="space-y-8">
-        
-        <!-- Banner 1: ECHOPULSE -->
-        <a href="/blog/" class="group relative block w-full aspect-video md:aspect-[21/9] overflow-hidden rounded-3xl bg-zinc-950 shadow-xl ring-1 ring-zinc-200 dark:ring-zinc-800 transition-all hover:shadow-2xl hover:shadow-cyan-500/10">
-            <img src="/assets/echopulse website banner.png" alt="ECHOPULSE Showcase" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-80">
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+    <!-- Carousel Container -->
+    <div class="relative w-full -mx-4 px-4 md:mx-0 md:px-0">
+        <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 hide-scrollbar">
             
-            <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-12">
-                <div class="flex items-center gap-3 mb-3">
-                    <span class="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300 bg-cyan-950/80 border border-cyan-800/50 rounded-full backdrop-blur-md">
-                        Roblox Experience
-                    </span>
-                </div>
-                <h3 class="text-3xl md:text-5xl font-extrabold text-white mb-3 tracking-tight group-hover:text-cyan-200 transition-colors">
-                    ECHOPULSE
-                </h3>
-                <p class="text-zinc-300 text-sm md:text-lg max-w-2xl mb-6 line-clamp-2 leading-relaxed">
-                    An immersive echolocation stealth-horror game where sound is sight. Powered by custom audio-raycasting engines and real-time environment pulse mapping.
-                </p>
-                <div class="flex items-center gap-2 text-white font-semibold text-sm md:text-base">
-                    <span>Explore Project Case Study</span>
-                    <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                    </svg>
-                </div>
+            <!-- Project 1 Card Wrapper -->
+            <div class="snap-start shrink-0 w-[85vw] md:w-[450px] lg:w-[500px]">
+                {% include card.html 
+                    image="/assets/echopulse website banner.png" 
+                    category="Roblox Development" 
+                    title="ECHOPULSE" 
+                    description="An immersive echolocation stealth-horror game where sound-is-sight. Built with custom audio-raycasting engines." 
+                    link="/blog/" 
+                    style="showcase" 
+                %}
             </div>
-        </a>
 
-        <!-- Banner 2: StarryDrive -->
-        <a href="/starrydrive" class="group relative block w-full aspect-video md:aspect-[21/9] overflow-hidden rounded-3xl bg-zinc-950 shadow-xl ring-1 ring-zinc-200 dark:ring-zinc-800 transition-all hover:shadow-2xl hover:shadow-indigo-500/10">
-            <img src="/assets/proj2 icon.png" alt="StarryDrive Showcase" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-80">
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+            <!-- Project 2 Card Wrapper -->
+            <div class="snap-start shrink-0 w-[85vw] md:w-[450px] lg:w-[500px]">
+                {% include card.html 
+                    image="/assets/proj2 icon.png" 
+                    category="Roblox Plugin" 
+                    title="StarryDrive" 
+                    description="A highly scalable, plug-and-play vehicle system plugin designed for seamless integration in Roblox Studio." 
+                    link="/starrydrive" 
+                    style="showcase" 
+                %}
+            </div>
             
-            <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-12">
-                <div class="flex items-center gap-3 mb-3">
-                    <span class="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-indigo-300 bg-indigo-950/80 border border-indigo-800/50 rounded-full backdrop-blur-md">
-                        Developer Tooling
-                    </span>
-                </div>
-                <h3 class="text-3xl md:text-5xl font-extrabold text-white mb-3 tracking-tight group-hover:text-indigo-200 transition-colors">
-                    StarryDrive
-                </h3>
-                <p class="text-zinc-300 text-sm md:text-lg max-w-2xl mb-6 line-clamp-2 leading-relaxed">
-                    A highly scalable, plug-and-play vehicle system plugin engineered for high-performance physics handling and effortless Studio integration.
-                </p>
-                <div class="flex items-center gap-2 text-white font-semibold text-sm md:text-base">
-                    <span>View System Specs & Plugin</span>
-                    <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                    </svg>
-                </div>
-            </div>
-        </a>
+            <!-- You can easily copy/paste the wrapper block above to add more cards to the carousel -->
 
+        </div>
     </div>
 </section>
 
 <!-- Technical Focus & Stats -->
-<section class="py-20 mt-10 border-t border-zinc-200 dark:border-zinc-800/60">
+<section class="py-16 border-t border-zinc-200 dark:border-zinc-800/60">
     <div class="max-w-3xl mb-12">
         <h2 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white mb-6">Technical Focus</h2>
         <p class="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
@@ -177,5 +170,50 @@ description: Portfolio of StarryBit, a Roblox developer creating scalable Roblox
             <h3 class="text-xl font-bold mb-3 text-zinc-900 dark:text-white">Content Creation</h3>
             <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed text-sm">Documenting the development journey on YouTube and written devlogs to share knowledge with the community.</p>
         </div>
+    </div>
+</section>
+
+<!-- Community & Socials Section -->
+<section id="community" class="py-20 border-t border-zinc-200 dark:border-zinc-800/60">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 dark:text-white mb-4">Join the Community</h2>
+        <p class="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+            Connect with other developers, follow the devlogs, and get early access to test builds and new plugins.
+        </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <!-- Primary CTA: Discord -->
+        <a href="YOUR_DISCORD_LINK" target="_blank" class="group relative md:col-span-2 flex flex-col items-center justify-center p-10 md:p-14 rounded-3xl bg-[#5865F2]/10 border border-[#5865F2]/20 hover:bg-[#5865F2]/20 transition-all overflow-hidden text-center">
+            <!-- Subtle Glow -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] bg-[#5865F2]/30 blur-[80px] rounded-full pointer-events-none group-hover:bg-[#5865F2]/40 transition-colors"></div>
+            
+            <svg class="w-12 h-12 md:w-16 md:h-16 text-[#5865F2] mb-6 relative z-10" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/>
+            </svg>
+            <h3 class="text-2xl md:text-3xl font-bold text-zinc-900 dark:text-white mb-3 relative z-10">Join the StarryBit Discord</h3>
+            <p class="text-zinc-700 dark:text-zinc-300 mb-6 text-sm md:text-base relative z-10">The central hub for development chat, support, and game updates.</p>
+            <span class="inline-block bg-[#5865F2] text-white font-bold px-8 py-4 rounded-full shadow-lg group-hover:scale-105 transition-transform relative z-10">
+                Connect on Discord
+            </span>
+        </a>
+
+        <!-- Secondary: YouTube -->
+        <a href="YOUR_YOUTUBE_LINK" target="_blank" class="group flex flex-col items-center text-center p-8 rounded-3xl bg-zinc-50 border border-zinc-200/80 hover:border-red-500/30 dark:bg-zinc-900/50 dark:border-zinc-800/80 dark:hover:border-red-500/50 transition-colors">
+            <svg class="w-10 h-10 text-zinc-400 group-hover:text-[#FF0000] transition-colors mb-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            <h3 class="text-xl font-bold text-zinc-900 dark:text-white mb-2">YouTube</h3>
+            <p class="text-zinc-600 dark:text-zinc-400 text-sm">Deep dives, showcases, and devlogs.</p>
+        </a>
+
+        <!-- Secondary: Reddit -->
+        <a href="YOUR_REDDIT_LINK" target="_blank" class="group flex flex-col items-center text-center p-8 rounded-3xl bg-zinc-50 border border-zinc-200/80 hover:border-orange-500/30 dark:bg-zinc-900/50 dark:border-zinc-800/80 dark:hover:border-orange-500/50 transition-colors">
+            <svg class="w-10 h-10 text-zinc-400 group-hover:text-[#FF4500] transition-colors mb-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 11.779c0-1.459-1.192-2.645-2.657-2.645-.715 0-1.363.286-1.84.746-1.81-1.191-4.259-1.949-6.971-2.046l1.483-4.669 4.016.941-.006.058c0 1.193.975 2.163 2.174 2.163 1.198 0 2.172-.97 2.172-2.163s-.975-2.164-2.172-2.164c-.92 0-1.704.574-2.021 1.379l-4.329-1.015c-.189-.046-.381.063-.44.249l-1.654 5.207c-2.838.034-5.409.798-7.3 2.025-.474-.438-1.103-.712-1.799-.712-1.465 0-2.656 1.187-2.656 2.646 0 .97.533 1.811 1.317 2.271-.052.282-.086.567-.086.857 0 3.911 4.808 7.093 10.719 7.093s10.72-3.182 10.72-7.093c0-.274-.029-.544-.075-.81.832-.447 1.405-1.312 1.405-2.318zm-17.224 1.816c0-.868.71-1.575 1.582-1.575.872 0 1.581.707 1.581 1.575s-.709 1.574-1.581 1.574-1.582-.706-1.582-1.574zm9.061 4.669c-1.797 1.793-5.594 1.835-5.698 1.835l-.013-.004-.012.004c-.104 0-3.896-.042-5.698-1.835-.147-.147-.132-.403.018-.529.145-.125.378-.112.518.026.04.043 1.442 1.47 5.176 1.47 3.737 0 5.138-1.428 5.178-1.47.142-.142.378-.153.522-.026.143.125.161.381.009.529zm-.926-3.095c-.872 0-1.581-.706-1.581-1.574 0-.868.709-1.575 1.581-1.575s1.581.707 1.581 1.575-.709 1.574-1.581 1.574z"/>
+            </svg>
+            <h3 class="text-xl font-bold text-zinc-900 dark:text-white mb-2">Reddit</h3>
+            <p class="text-zinc-600 dark:text-zinc-400 text-sm">Join the conversation on r/roblox and indie subs.</p>
+        </a>
     </div>
 </section>
