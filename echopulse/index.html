@@ -19,18 +19,18 @@ description: Deep dive into ECHOPULSE, an immersive echolocation stealth-horror 
             You are blind. The only way to see is to make noise. An immersive stealth-horror experience built entirely on a custom audio-raycasting engine.
         </p>
         
-        <div class="flex flex-wrap gap-4">
-            <a href="YOUR_ROBLOX_GAME_LINK" target="_blank" class="bg-cyan-500 hover:bg-cyan-400 text-zinc-950 font-bold px-7 py-3.5 rounded-full transition-transform hover:scale-105 shadow-md text-base flex items-center gap-2">
+        <div class="flex flex-wrap items-center gap-5">
+            <a href="YOUR_ROBLOX_GAME_LINK" target="_blank" class="bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-semibold px-7 py-3.5 rounded-full transition-transform hover:scale-105 shadow-md text-base flex items-center gap-2">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Play on Roblox
             </a>
-            <a href="#devlogs" class="bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-900 dark:text-white font-medium px-6 py-3.5 rounded-full transition-colors text-base">
-                Read the Devlogs &darr;
+            <a href="https://discord.gg/5j7Tgez3nm" target="_blank" class="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white font-medium px-6 py-3.5 transition-colors text-base flex items-center gap-2">
+                Join the Community <span aria-hidden="true">&rarr;</span>
             </a>
         </div>
     </div>
 </header>
 
-<section class="max-w-6xl mx-auto px-6 mb-20">
+<section class="max-w-6xl mx-auto px-6 mb-24">
     <div class="w-full aspect-[16/9] md:aspect-[21/9] rounded-3xl overflow-hidden bg-zinc-900 shadow-xl ring-1 ring-zinc-200 dark:ring-zinc-800 relative group">
         <img src="/assets/echopulse website banner.png" alt="ECHOPULSE Gameplay" class="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105">
         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/40 to-transparent"></div>
@@ -38,9 +38,10 @@ description: Deep dive into ECHOPULSE, an immersive echolocation stealth-horror 
 </section>
 
 <section class="py-16 border-t border-zinc-200 dark:border-zinc-800/60">
-    <div class="max-w-5xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
-            <div>
+    <div class="max-w-5xl mx-auto px-6 space-y-32">
+
+        <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div class="order-2 md:order-1">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-zinc-900 dark:text-white mb-6 tracking-tight">
                     Bypassing Standard Rendering
                 </h2>
@@ -49,59 +50,69 @@ description: Deep dive into ECHOPULSE, an immersive echolocation stealth-horror 
                     <p>Every footstep, dropped item, and ambient noise fires hundreds of spatial raycasts, painting the environment for a fraction of a second before fading back to pure black.</p>
                 </div>
             </div>
-            <div class="aspect-video rounded-2xl overflow-hidden bg-zinc-900 shadow-lg ring-1 ring-zinc-200/50 dark:ring-zinc-800">
+            <div class="order-1 md:order-2 aspect-video rounded-2xl overflow-hidden bg-zinc-900 shadow-lg ring-1 ring-zinc-200/50 dark:ring-zinc-800">
                 <img src="/assets/echopulse-mechanic-demo.gif" alt="Audio Raycasting Demo" class="w-full h-full object-cover opacity-90">
             </div>
         </div>
 
-        <h2 class="text-2xl font-bold text-zinc-900 dark:text-white mb-8">Systems at Play</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="p-8 rounded-2xl bg-zinc-50 border border-zinc-200/80 shadow-sm dark:bg-zinc-900/50 dark:border-zinc-800/80">
-                <h3 class="text-xl font-bold mb-3 text-cyan-600 dark:text-cyan-400">Strategic Noise</h3>
-                <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">Throw objects to map distant areas or stay perfectly still to hide. Every sound you make is a calculated risk tied directly to the core gameplay loop.</p>
+        <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-zinc-900 shadow-lg ring-1 ring-zinc-200/50 dark:ring-zinc-800">
+                <img src="/assets/echopulse-horror-demo.gif" alt="ECHOPULSE Entity AI" class="w-full h-full object-cover opacity-90">
             </div>
-            <div class="p-8 rounded-2xl bg-zinc-50 border border-zinc-200/80 shadow-sm dark:bg-zinc-900/50 dark:border-zinc-800/80">
-                <h3 class="text-xl font-bold mb-3 text-indigo-600 dark:text-indigo-400">Responsive AI</h3>
-                <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">The entities hunting you operate on the exact same audio system. If your noise can reveal the map, it can also reveal your position.</p>
-            </div>
-            <div class="p-8 rounded-2xl bg-zinc-50 border border-zinc-200/80 shadow-sm dark:bg-zinc-900/50 dark:border-zinc-800/80">
-                <h3 class="text-xl font-bold mb-3 text-purple-600 dark:text-purple-400">Insane Optimization</h3>
-                <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">Achieving this required heavy object pooling, caching, and spatial partitioning to ensure client frame rates stay buttery smooth.</p>
+            <div>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-zinc-900 dark:text-white mb-6 tracking-tight">
+                    Hunted by Sound
+                </h2>
+                <div class="space-y-4 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                    <p>The entities hunting you operate on the exact same audio system. They are blind, just like you.</p>
+                    <p>This creates a terrifying balancing act: you have to make noise to navigate the map, find objectives, and track your teammates. But if your noise can reveal the map to you, it can reveal your position to <em>them</em>.</p>
+                </div>
             </div>
         </div>
+
+        <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div class="order-2 md:order-1">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-zinc-900 dark:text-white mb-6 tracking-tight">
+                    Voting, Loops & Rewards
+                </h2>
+                <div class="space-y-4 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                    <p>ECHOPULSE isn't just a tech demo; it features a fully fleshed-out progression system designed to keep players coming back.</p>
+                    <p>Between rounds, players interact with a dynamic map voting system. Surviving loops and completing objectives rewards currency, which can be spent on unlockable echolocation color skins, custom visual effects, and survival tools.</p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2 grid grid-cols-2 gap-4">
+                <div class="aspect-square rounded-2xl overflow-hidden bg-zinc-900 shadow-sm ring-1 ring-zinc-200/50 dark:ring-zinc-800">
+                    <img src="/assets/echopulse-skin-1.jpg" alt="Unlockable Skin" class="w-full h-full object-cover opacity-90">
+                </div>
+                <div class="aspect-square rounded-2xl overflow-hidden bg-zinc-900 shadow-sm ring-1 ring-zinc-200/50 dark:ring-zinc-800">
+                    <img src="/assets/echopulse-voting-ui.jpg" alt="Map Voting UI" class="w-full h-full object-cover opacity-90">
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 
-<section id="devlogs" class="py-20 border-t border-zinc-200 dark:border-zinc-800/60 bg-zinc-50/50 dark:bg-zinc-900/20">
-    <div class="max-w-5xl mx-auto px-6">
-        <div class="flex flex-col sm:flex-row justify-between items-end mb-10 gap-4">
-            <div>
-                <h2 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-white">Engineering Logs</h2>
-                <p class="text-zinc-600 dark:text-zinc-400 mt-2 text-lg">Follow the technical process behind the game.</p>
-            </div>
-            <a href="/devlogs/" class="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white font-medium transition-colors shrink-0 flex items-center gap-2">
-                All Devlogs &rarr;
-            </a>
+<section class="py-20 border-t border-zinc-200 dark:border-zinc-800/60 bg-zinc-50/50 dark:bg-zinc-900/20">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-12 text-center max-w-2xl mx-auto">
+            <h2 class="text-3xl font-bold text-zinc-900 dark:text-white mb-4">Complete Feature Set</h2>
+            <p class="text-zinc-600 dark:text-zinc-400 text-lg">A robust blend of systems engineering and player-focused game design.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            {% include card.html 
-                image="/assets/echopulse-devlog-1.png" 
-                category="System Engineering" 
-                title="Building the Audio-Raycasting Framework" 
-                description="How I bypassed standard lighting to create a performant, real-time echolocation rendering system." 
-                link="/devlogs/echopulse-engine" 
-                style="showcase" 
-            %}
-            
-            {% include card.html 
-                image="/assets/echopulse-devlog-2.png" 
-                category="Game Design" 
-                title="Designing Horror Around Blindness" 
-                description="Balancing player frustration, tension, and reward when the primary sense is stripped away." 
-                link="/devlogs/echopulse-design" 
-                style="showcase" 
-            %}
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="p-8 rounded-2xl bg-white border border-zinc-200/80 shadow-sm dark:bg-zinc-900/50 dark:border-zinc-800/80 hover:border-cyan-500/30 transition-colors">
+                <h3 class="text-xl font-bold mb-3 text-zinc-900 dark:text-white">Spatial Partitioning</h3>
+                <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">Heavy object pooling and caching ensures that despite firing thousands of rays a second, client frame rates stay buttery smooth.</p>
+            </div>
+            <div class="p-8 rounded-2xl bg-white border border-zinc-200/80 shadow-sm dark:bg-zinc-900/50 dark:border-zinc-800/80 hover:border-indigo-500/30 transition-colors">
+                <h3 class="text-xl font-bold mb-3 text-zinc-900 dark:text-white">Dynamic Map Voting</h3>
+                <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">A custom, server-authoritative lobby system that handles seamless map rotation, player loadouts, and matchmaking loops.</p>
+            </div>
+            <div class="p-8 rounded-2xl bg-white border border-zinc-200/80 shadow-sm dark:bg-zinc-900/50 dark:border-zinc-800/80 hover:border-purple-500/30 transition-colors">
+                <h3 class="text-xl font-bold mb-3 text-zinc-900 dark:text-white">Cosmetic Progression</h3>
+                <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">Secure data-stores track player progression, allowing them to purchase and equip custom echolocation visuals and unique skins.</p>
+            </div>
         </div>
     </div>
 </section>
